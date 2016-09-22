@@ -32,10 +32,10 @@
             </Text>
          </top>
          <center>
-            <Button mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" />
+            <Button fx:id="LoginButton" mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
-            <Button mnemonicParsing="false" text="Registration" BorderPane.alignment="CENTER">
+            <Button fx:id="RegistrationButton" mnemonicParsing="false" text="Registration" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="100.0" />
                </BorderPane.margin>

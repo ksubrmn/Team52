@@ -1,11 +1,13 @@
 package fxapp;
 
 import controller.HomeScreenController;
+import controller.LoginScreenController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -17,7 +19,7 @@ public class Main extends Application {
 
     private Stage mainScreen;
 
-    private GridPane rootLayout;
+    private BorderPane rootLayout;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -45,6 +47,18 @@ public class Main extends Application {
         }
     }
 
+    private void showLoginScreen(Stage mainScreen) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/LoginDialog.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            LoginScreenController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Login screen. Fxml not loaded?");
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);

@@ -1,5 +1,6 @@
 package controller;
 
+import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -20,6 +21,8 @@ public class LoginScreenController {
     @FXML
     private PasswordField passwordField;
 
+    private Main main;
+
     @FXML
     public void submitButtonPressed() {
         if (usernameTextField.getText().equals("user")
@@ -37,5 +40,9 @@ public class LoginScreenController {
     @FXML
     public void cancelButtonPressed() {
 
+    }
+
+    public void setMainApp(Main main) {
+        this.main = main;
     }
 }

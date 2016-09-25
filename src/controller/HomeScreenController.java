@@ -1,6 +1,8 @@
 package controller;
 
 import fxapp.Main;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -22,16 +24,30 @@ public class HomeScreenController {
 
     }
 
-    @FXML
-    public void RegistrationButtonPressed() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Registration");
-        alert.setHeaderText("Text");
-        alert.setContentText("User ID: user\nPassword: password");
-        alert.showAndWait();
-    }
+//    @FXML
+//    public void RegistrationButtonPressed() {
+//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//        alert.setTitle("Registration");
+//        alert.setHeaderText("Text");
+//        alert.setContentText("User ID: user\nPassword: password");
+//        alert.showAndWait();
+//    }
 
     public void setMainApp(Main main) {
         this.main = main;
+        RegistrationButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Registration");
+                alert.setHeaderText("User Account");
+                alert.setContentText("User ID: user\nPassword: password");
+                alert.showAndWait();
+            }
+        });
+        LoginButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                main.showLoginScreen();
+            }
+        });
     }
 }

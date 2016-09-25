@@ -1,5 +1,6 @@
 package fxapp;
 
+import controller.ApplicationController;
 import controller.HomeScreenController;
 import controller.LoginScreenController;
 import javafx.application.Application;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -31,7 +33,7 @@ public class Main extends Application {
         initHomeScreen(mainScreen);
     }
 
-    private void initHomeScreen(Stage mainScreen) {
+    public void initHomeScreen(Stage mainScreen) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("../view/WelcomeScreen.fxml"));
@@ -47,16 +49,46 @@ public class Main extends Application {
         }
     }
 
-    private void showLoginScreen(Stage mainScreen) {
+    public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("../view/LoginDialog.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
+            rootLayout.setBottom(null);
+            rootLayout.setTop(null);
             LoginScreenController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Login screen. Fxml not loaded?");
+        }
+    }
+
+    public void showApplicationScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/ApplicationScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            rootLayout.setBottom(null);
+            rootLayout.setTop(null);
+            ApplicationController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Application screen. Fxml not loaded?");
+        }
+    }
+
+    public void showHomeScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/WelcomeScreen.fxml"));
+            BorderPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            HomeScreenController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Home screen. fxml not loaded?");
         }
     }
 

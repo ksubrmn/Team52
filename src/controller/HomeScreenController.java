@@ -37,11 +37,7 @@ public class HomeScreenController {
         this.main = main;
         RegistrationButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Registration");
-                alert.setHeaderText("User Account");
-                alert.setContentText("User ID: user\nPassword: password");
-                alert.showAndWait();
+                main.showCreateAccountScreen();
             }
         });
         LoginButton.setOnAction(new EventHandler<ActionEvent>() {

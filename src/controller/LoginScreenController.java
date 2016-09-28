@@ -48,8 +48,8 @@ public class LoginScreenController {
         this.main = main;
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                if (usernameTextField.getText().equals("user")
-                        && passwordField.getText().equals("password")) {
+                if (main.getAccountTracker().checkAccount(usernameTextField.getText(),
+                        passwordField.getText())) {
                     main.showApplicationScreen();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);

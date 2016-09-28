@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="NewUsernameBox" layoutX="285.0" layoutY="87.0" />
+      <TextField fx:id="NewPasswordBox" layoutX="285.0" layoutY="136.0" />
+      <ComboBox fx:id="AccountTypeSelection" layoutX="285.0" layoutY="190.0" prefWidth="150.0" />
+      <Label layoutX="167.0" layoutY="91.0" text="Username:" />
+      <Label layoutX="166.0" layoutY="131.0" text="Password:" />
+      <Label layoutX="166.0" layoutY="181.0" text="Account Type:" />
+      <Label layoutX="231.0" layoutY="31.0" text="Create new account:" />
+   </children>
+</AnchorPane>

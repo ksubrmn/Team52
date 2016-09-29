@@ -18,8 +18,13 @@ public class ApplicationController {
         this.main = main;
         LogoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                main.setUser(null);
                 main.showHomeScreen();
             }
         });
+    }
+
+    public void HandleEditButton() {
+        main.showEditInformationScreen();
     }
 }

@@ -50,6 +50,7 @@ public class LoginScreenController {
             @Override public void handle(ActionEvent e) {
                 if (main.getAccountTracker().checkAccount(usernameTextField.getText(),
                         passwordField.getText())) {
+                    main.setUser(main.getAccountTracker().getUser(usernameTextField.getText()));
                     main.showApplicationScreen();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);

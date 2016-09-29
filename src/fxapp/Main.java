@@ -2,6 +2,7 @@ package fxapp;
 
 import controller.ApplicationController;
 import controller.CreateAccountController;
+import controller.EditProfileController;
 import controller.HomeScreenController;
 import controller.LoginScreenController;
 import javafx.application.Application;
@@ -15,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.AccountTracker;
+import model.User;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +28,8 @@ public class Main extends Application {
     private BorderPane rootLayout;
 
     private AccountTracker accountTracker;
+
+    private User user;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -112,8 +116,25 @@ public class Main extends Application {
         }
     }
 
+    public void showEditInformationScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/EditProfileScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            EditProfileController controller = loader.getController();
+            controller.setMainApp(this, user);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Account Creation screen. fxml not loaded?");
+        }
+    }
+
     public AccountTracker getAccountTracker() {
         return accountTracker;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public static void main(String[] args) {

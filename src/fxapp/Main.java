@@ -31,8 +31,15 @@ public class Main extends Application {
 
     private User user;
 
+
+    /**
+     * Starts the program
+     *
+     * @param primaryStage the stage
+     * @throws Exception
+     */
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
 //        primaryStage.setTitle("Team 52");
 //        primaryStage.setScene(new Scene(root, 300, 275));
@@ -42,6 +49,11 @@ public class Main extends Application {
         initHomeScreen(mainScreen);
     }
 
+    /**
+     * Initializes the main screen
+     *
+     * @param mainScreen the main screen
+     */
     public void initHomeScreen(Stage mainScreen) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -58,6 +70,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Shows the login screen
+     */
     public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -73,6 +88,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Shows the applicaiton screen
+     */
     public void showApplicationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -101,6 +119,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Displays the create account screen
+     */
     public void showCreateAccountScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -116,6 +137,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Displays the edit information screen
+     */
     public void showEditInformationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -129,14 +153,27 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Getter for the Account Tracker
+     * @return the acocunt tracker
+     */
     public AccountTracker getAccountTracker() {
         return accountTracker;
     }
 
+    /**
+     * Setter for user
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     * The main method
+     *
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

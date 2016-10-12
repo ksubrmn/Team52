@@ -42,6 +42,10 @@ public class Main extends Application {
         initHomeScreen(mainScreen);
     }
 
+    /**
+     * Initialize home screen to welcome screen
+     * @param mainScreen
+     */
     public void initHomeScreen(Stage mainScreen) {
         try {
             FXMLLoader loader = new FXMLLoader();

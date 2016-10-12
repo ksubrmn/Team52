@@ -29,6 +29,9 @@ public class CreateAccountController {
     @FXML
     Button CancelButton;
 
+    /**
+     * Handles submit button pressed event
+     */
     public void handleSubmitPressed() {
         if (NewUsernameBox.getText() != null && !NewUsernameBox.getText().equals("")
                 && NewPasswordBox.getText() != null) {
@@ -57,9 +60,18 @@ public class CreateAccountController {
         }
     }
 
+    /**
+     * Handles cancel button pressed event
+     */
     public void handleCancelPressed() {
         main.showHomeScreen();
     }
+
+    /**
+     * Sets main app state
+     * Gets account list
+     * @param main
+     */
 
     public void setMainApp(Main main) {
         this.main = main;

@@ -44,6 +44,11 @@ public class LoginScreenController {
 //
 //    }
 
+    /**
+     * Checks username and password
+     * Alerts user if login fails
+     * @param main
+     */
     public void setMainApp(Main main) {
         this.main = main;
         submitButton.setOnAction(new EventHandler<ActionEvent>() {

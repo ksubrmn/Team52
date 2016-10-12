@@ -6,15 +6,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import model.AccountType;
 import model.WaterCondition;
 import model.WaterType;
 import model.User;
+
+import java.time.LocalDate;
+
 
 public class SubmitReportController {
 
@@ -34,7 +34,7 @@ public class SubmitReportController {
     TextField timeField;
 
     @FXML
-    TextField dateField;
+    DatePicker dateField;
 
     @FXML
     TextField locationField;
@@ -76,7 +76,7 @@ public class SubmitReportController {
     }
     public void HandleSubmitButton() {
 
-        if (main.getWaterReportTracker().addReport(dateField.getText(),
+        if (main.getWaterReportTracker().addReport(dateField.getValue(),
                 timeField.getText(), locationField.getText(),
                 main.getUser().getUsername(),
                 (WaterType) waterType.getSelectionModel().getSelectedItem(),

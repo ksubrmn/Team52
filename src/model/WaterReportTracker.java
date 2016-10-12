@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import fxapp.Main;
 import model.User;
+import java.time.LocalDate;
 /**
  * Created by kalyasubramanian1 on 10/12/16.
  */
@@ -16,7 +17,7 @@ public class WaterReportTracker {
 
 
 
-    public boolean addReport(String date, String time, String location, String username,
+    public boolean addReport(LocalDate date, String time, String location, String username,
                              WaterType waterType, WaterCondition waterCondition) {
         WaterSourceReport newReport = new WaterSourceReport(date, time,
                 reports.size() +1,

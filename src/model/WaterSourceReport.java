@@ -1,11 +1,12 @@
 package model;
 
-
+import java.time.LocalDate;
+import java.util.Date;
 /**
  * Created by kalyasubramanian1 on 10/12/16.
  */
 public class WaterSourceReport {
-    private String date;
+    private LocalDate date;
     private String time;
     private int reportNumber;
     private String reporterName;
@@ -16,8 +17,8 @@ public class WaterSourceReport {
 
     //Getters and setters for properties
 
-    public String getDate() {return date; }
-    public void setDate(String date) { this.date = date; }
+    public LocalDate getDate() {return date; }
+    public void setDate(LocalDate date) { this.date = date; }
 
     public String getTime() {return time; }
     public void setTime(String time) { this.time = time; }
@@ -40,7 +41,7 @@ public class WaterSourceReport {
     public WaterCondition getWaterCondition() { return waterCondition; }
     public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
-    public WaterSourceReport(String date, String time, int reportNumber, String reporterName, String location, WaterType waterType, WaterCondition waterCondition) {
+    public WaterSourceReport(LocalDate date, String time, int reportNumber, String reporterName, String location, WaterType waterType, WaterCondition waterCondition) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;

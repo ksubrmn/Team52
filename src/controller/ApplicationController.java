@@ -34,4 +34,7 @@ public class ApplicationController {
     public void HandleEditButton() {
         main.showEditInformationScreen();
     }
+    public void HandleSubmitReportButton() {
+        main.showSubmitReportScreen();
+    }
 }

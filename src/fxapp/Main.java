@@ -1,10 +1,6 @@
 package fxapp;
 
-import controller.ApplicationController;
-import controller.CreateAccountController;
-import controller.EditProfileController;
-import controller.HomeScreenController;
-import controller.LoginScreenController;
+import controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
@@ -130,6 +126,19 @@ public class Main extends Application {
             controller.setMainApp(this, user);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Account Creation screen. fxml not loaded?");
+        }
+    }
+
+    public void showSubmitReportScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/SubmitReportScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            SubmitReportController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
         }
     }
 

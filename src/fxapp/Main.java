@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.AccountTracker;
+import model.AccountType;
 import model.User;
 import model.WaterReportTracker;
 
@@ -39,6 +40,7 @@ public class Main extends Application {
 //        primaryStage.show();
         accountTracker = new AccountTracker();
         waterReportTracker = new WaterReportTracker();
+        accountTracker.addAccount("user", "pass", AccountType.User);
         mainScreen = primaryStage;
         initHomeScreen(mainScreen);
     }
@@ -141,7 +143,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitReportController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, user);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
         }

@@ -14,10 +14,12 @@ import javafx.scene.text.Text;
 import model.AccountType;
 import model.WaterCondition;
 import model.WaterType;
+import model.User;
 
 public class SubmitReportController {
 
-    Main main;
+    private Main main;
+    private User user;
 
     @FXML
     Button CancelReportButton;
@@ -37,12 +39,14 @@ public class SubmitReportController {
     @FXML
     TextField locationField;
 
+
     /**
      * Sets Main application state
      * @param main
      */
-    public void setMainApp(Main main) {
+    public void setMainApp(Main main, User user) {
         this.main = main;
+        this.user = user;
         ObservableList<WaterType> list = FXCollections.observableArrayList();
         for (WaterType type: WaterType.values()) {
             list.add(type);
@@ -74,6 +78,7 @@ public class SubmitReportController {
 
         if (main.getWaterReportTracker().addReport(dateField.getText(),
                 timeField.getText(), locationField.getText(),
+                main.getUser().getUsername(),
                 (WaterType) waterType.getSelectionModel().getSelectedItem(),
                 (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
 

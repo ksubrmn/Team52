@@ -16,10 +16,13 @@ public class WaterReportTracker {
 
 
 
-    public boolean addReport(String date, String time, String location,
+    public boolean addReport(String date, String time, String location, String username,
                              WaterType waterType, WaterCondition waterCondition) {
         WaterSourceReport newReport = new WaterSourceReport(date, time,
-                reports.size() +1, main.getUser().getUsername(),location, waterType, waterCondition );
+                reports.size() +1,
+                username,
+                location, waterType,
+                waterCondition );
 
         reports.add(newReport);
 

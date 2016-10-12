@@ -88,6 +88,7 @@ public class SubmitReportController {
             alert.setContentText("Water Report #" + main.getWaterReportTracker().size()
                     + " created by " + main.getUser().getUsername());
             alert.showAndWait();
+            main.showApplicationScreen();
 
         }
         else {

@@ -85,7 +85,8 @@ public class SubmitReportController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Water Report Created");
             alert.setHeaderText("Report created");
-            alert.setContentText("Water Report #" + main.getWaterReportTracker().size() + " created");
+            alert.setContentText("Water Report #" + main.getWaterReportTracker().size()
+                    + " created by " + main.getUser().getUsername());
             alert.showAndWait();
 
         }

@@ -71,6 +71,25 @@ public class SubmitReportController {
         main.showApplicationScreen();
     }
     public void HandleSubmitButton() {
-        main.showApplicationScreen();
+
+        if (main.getWaterReportTracker().addReport(dateField.getText(),
+                timeField.getText(), locationField.getText(),
+                (WaterType) waterType.getSelectionModel().getSelectedItem(),
+                (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Water Report Created");
+            alert.setHeaderText("Report created");
+            alert.setContentText("Water Report #" + main.getWaterReportTracker().size() + " created");
+            alert.showAndWait();
+
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error creating new report");
+            alert.setContentText("Report could not be created");
+            alert.showAndWait();
+        }
     }
 }

@@ -40,4 +40,13 @@ public class WaterSourceReport {
     public WaterCondition getWaterCondition() { return waterCondition; }
     public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
+    public WaterSourceReport(String date, String time, int reportNumber, String reporterName, String location, WaterType waterType, WaterCondition waterCondition) {
+        this.date = date;
+        this.time = time;
+        this.reportNumber = reportNumber;
+        this.reporterName = reporterName;
+        this.location = location;
+        this.waterType = waterType;
+        this.waterCondition = waterCondition;
+    }
 }

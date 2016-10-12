@@ -13,6 +13,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.AccountTracker;
 import model.User;
+import model.WaterReportTracker;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +29,8 @@ public class Main extends Application {
 
     private User user;
 
+    private WaterReportTracker waterReportTracker;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 //        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
@@ -34,6 +38,7 @@ public class Main extends Application {
 //        primaryStage.setScene(new Scene(root, 300, 275));
 //        primaryStage.show();
         accountTracker = new AccountTracker();
+        waterReportTracker = new WaterReportTracker();
         mainScreen = primaryStage;
         initHomeScreen(mainScreen);
     }
@@ -142,10 +147,13 @@ public class Main extends Application {
         }
     }
 
-    public AccountTracker getAccountTracker() {
-        return accountTracker;
+    public AccountTracker getAccountTracker() { return accountTracker; }
+
+    public WaterReportTracker getWaterReportTracker() {
+        return waterReportTracker;
     }
 
+    public User getUser() { return user; }
     public void setUser(User user) {
         this.user = user;
     }

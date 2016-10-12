@@ -14,7 +14,7 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Button fx:id="SubmitReportButton" layoutX="66.0" layoutY="343.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="SubmitReportButton" layoutX="66.0" layoutY="343.0" mnemonicParsing="false" text="Submit" onAction="#HandleSubmitButton" />
       <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleCancelButton" text="Cancel" />
       <TextField fx:id="dateField" layoutX="300.0" layoutY="120.0" />
       <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />

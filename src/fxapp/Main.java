@@ -162,6 +162,19 @@ public class Main extends Application {
         }
     }
 
+    public void showReportDetailsScreen(int reportNumber) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/ReportDetailsScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            ReportDetailsController controller = loader.getController();
+            controller.setMainApp(this, user, waterReportTracker, reportNumber);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
+        }
+    }
+
     public AccountTracker getAccountTracker() { return accountTracker; }
 
     public WaterReportTracker getWaterReportTracker() {

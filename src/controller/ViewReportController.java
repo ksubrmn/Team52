@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import model.AccountType;
-import model.WaterReportTracker;
-import model.User;
-import model.WaterSourceReport;
+import model.*;
 
 public class ViewReportController {
 
@@ -52,6 +49,12 @@ public class ViewReportController {
         main.showApplicationScreen();
     }
     public void HandleViewReportButton() {
-        //TODO
+
+        WaterSourceReport selectedReport = (WaterSourceReport) Reports.getSelectionModel().getSelectedItem();
+
+        int reportNumber = selectedReport.getReportNumber();
+
+
+        main.showReportDetailsScreen(reportNumber);
     }
 }

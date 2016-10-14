@@ -50,4 +50,8 @@ public class WaterSourceReport {
         this.waterType = waterType;
         this.waterCondition = waterCondition;
     }
+
+    public String toString() {
+        return "#" + reportNumber + " by " + reporterName;
+    }
 }

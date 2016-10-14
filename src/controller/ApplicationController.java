@@ -37,4 +37,6 @@ public class ApplicationController {
     public void HandleSubmitReportButton() {
         main.showSubmitReportScreen();
     }
+
+    public void HandleViewReportButton() { main.showViewReportScreen();}
 }

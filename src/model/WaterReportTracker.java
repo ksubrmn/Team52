@@ -34,4 +34,8 @@ public class WaterReportTracker {
     public int size() {
         return reports.size();
     }
+
+    public List<WaterSourceReport> getReports() {
+        return reports;
+    }
 }

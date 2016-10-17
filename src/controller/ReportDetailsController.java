@@ -45,7 +45,8 @@ public class ReportDetailsController {
         this.main = main;
         this.user = user;
         this.waterReportTracker = waterReportTracker;
-        this.report = waterReportTracker.getReports().get(reportNumber -1);
+        System.out.println("here");
+        this.report = this.waterReportTracker.getReports().get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());

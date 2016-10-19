@@ -14,6 +14,10 @@ public class ApplicationController {
     @FXML
     Button LogoutButton;
 
+    /**
+     * Sets Main application state
+     * @param main
+     */
     public void setMainApp(Main main) {
         this.main = main;
         LogoutButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -24,7 +28,15 @@ public class ApplicationController {
         });
     }
 
+    /**
+     * Handles edit button action
+     */
     public void HandleEditButton() {
         main.showEditInformationScreen();
     }
+    public void HandleSubmitReportButton() {
+        main.showSubmitReportScreen();
+    }
+
+    public void HandleViewReportButton() { main.showViewReportScreen();}
 }

@@ -7,21 +7,18 @@ public class AccountTracker {
 
     private List<User> accounts;
 
-    /**
-     * Creates new account tracker
-     */
     public AccountTracker() {
         accounts = new ArrayList<>();
     }
 
     /**
-     * Adds a new account
-     *
-     * @param username the username
-     * @param password the password
-     * @param accountType the account type
-     * @return whether or not it was added
+     * Adds account to list of valid accounts
+     * @param username
+     * @param password
+     * @param accountType
+     * @return true if account is added
      */
+
     public boolean addAccount(String username, String password, AccountType accountType) {
         for (User account: accounts) {
             if (account.getUsername().equals(username)) {
@@ -33,11 +30,10 @@ public class AccountTracker {
     }
 
     /**
-     * Checks if the account is in the tracker
-     *
-     * @param username the username
-     * @param password the password
-     * @return whether or not the acocunt was found
+     * Checks if user name and password are valid
+     * @param username
+     * @param password
+     * @return true if account is valid
      */
     public boolean checkAccount(String username, String password) {
         for (User account: accounts) {
@@ -49,10 +45,9 @@ public class AccountTracker {
     }
 
     /**
-     * Returns user
-     *
-     * @param username the username
-     * @return the user
+     * Finds User with given username
+     * @param username
+     * @return proper User object
      */
     public User getUser(String username) {
         for (User user: accounts) {

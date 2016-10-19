@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubmitReportController">
    <children>
       <Text layoutX="185.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Report">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button fx:id="SubmitReportButton" layoutX="66.0" layoutY="343.0" mnemonicParsing="false" text="Submit" />
-      <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0" mnemonicParsing="false" text="Cancell" />
-      <TextField layoutX="300.0" layoutY="120.0" />
-      <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+      <Button fx:id="SubmitReportButton" layoutX="66.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleSubmitButton" text="Submit" />
+      <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleCancelButton" text="Cancel" />
+      <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="139.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
-      <Text layoutX="141.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condition" />
-      <TextField layoutX="300.0" layoutY="169.0" />
-      <TextField layoutX="300.0" layoutY="224.0" />
+      <Text layoutX="141.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Type" />
+      <Text layoutX="142.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Condition" />
+      <TextField fx:id="locationField" layoutX="299.0" layoutY="200.0" />
+      <Text layoutX="141.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+      <TextField fx:id="timeField" layoutX="299.0" layoutY="156.0" />
+      <Text layoutX="138.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+      <ComboBox fx:id="waterType" layoutX="306.0" layoutY="244.0" prefWidth="150.0" />
+      <ComboBox fx:id="waterCondition" layoutX="307.0" layoutY="286.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateField" layoutX="300.0" layoutY="119.0" prefHeight="26.0" prefWidth="188.0" />
    </children>
 </AnchorPane>

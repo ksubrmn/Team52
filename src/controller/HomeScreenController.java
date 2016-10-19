@@ -33,6 +33,10 @@ public class HomeScreenController {
 //        alert.showAndWait();
 //    }
 
+    /**
+     * Handles login vs registration choice
+     * @param main
+     */
     public void setMainApp(Main main) {
         this.main = main;
         RegistrationButton.setOnAction(new EventHandler<ActionEvent>() {

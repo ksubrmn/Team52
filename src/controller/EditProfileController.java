@@ -16,6 +16,9 @@ public class EditProfileController {
 
     private User user;
 
+    /**
+     * Handles save button press event
+     */
     public void handleSavePressed() {
         if (EmailBox.getText().equals("") || AddressBox.getText().equals("") || TitleBox.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -36,10 +39,18 @@ public class EditProfileController {
         }
     }
 
+    /**
+     * Handles cancel button pressed event
+     */
     public void handleCancelPressed() {
         main.showApplicationScreen();
     }
 
+    /**
+     * Sets main app state for a given user
+     * @param main
+     * @param user current user
+     */
     public void setMainApp(Main main, User user) {
         this.main = main;
         this.user = user;

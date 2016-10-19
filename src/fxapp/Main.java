@@ -1,10 +1,6 @@
 package fxapp;
 
-import controller.ApplicationController;
-import controller.CreateAccountController;
-import controller.EditProfileController;
-import controller.HomeScreenController;
-import controller.LoginScreenController;
+import controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
@@ -16,7 +12,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.AccountTracker;
+import model.AccountType;
 import model.User;
+import model.WaterReportTracker;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,28 +30,24 @@ public class Main extends Application {
 
     private User user;
 
+    private WaterReportTracker waterReportTracker;
 
-    /**
-     * Starts the program
-     *
-     * @param primaryStage the stage
-     * @throws Exception
-     */
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception{
 //        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
 //        primaryStage.setTitle("Team 52");
 //        primaryStage.setScene(new Scene(root, 300, 275));
 //        primaryStage.show();
         accountTracker = new AccountTracker();
+        waterReportTracker = new WaterReportTracker();
+        accountTracker.addAccount("user", "pass", AccountType.User);
         mainScreen = primaryStage;
         initHomeScreen(mainScreen);
     }
 
     /**
-     * Initializes the main screen
-     *
-     * @param mainScreen the main screen
+     * Initialize home screen to welcome screen
+     * @param mainScreen
      */
     public void initHomeScreen(Stage mainScreen) {
         try {
@@ -70,9 +65,6 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Shows the login screen
-     */
     public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -88,9 +80,6 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Shows the applicaiton screen
-     */
     public void showApplicationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -119,9 +108,6 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Displays the create account screen
-     */
     public void showCreateAccountScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -137,9 +123,6 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Displays the edit information screen
-     */
     public void showEditInformationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -153,27 +136,56 @@ public class Main extends Application {
         }
     }
 
-    /**
-     * Getter for the Account Tracker
-     * @return the acocunt tracker
-     */
-    public AccountTracker getAccountTracker() {
-        return accountTracker;
+    public void showSubmitReportScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/SubmitReportScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            SubmitReportController controller = loader.getController();
+            controller.setMainApp(this, user);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
+        }
     }
 
-    /**
-     * Setter for user
-     * @param user the user
-     */
+    public void showViewReportScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/ViewReportScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            ViewReportController controller = loader.getController();
+            controller.setMainApp(this, user, waterReportTracker);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
+        }
+    }
+
+    public void showReportDetailsScreen(int reportNumber) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/ReportDetailsScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            ReportDetailsController controller = loader.getController();
+            controller.setMainApp(this, user, waterReportTracker, reportNumber);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
+        }
+    }
+
+    public AccountTracker getAccountTracker() { return accountTracker; }
+
+    public WaterReportTracker getWaterReportTracker() {
+        return waterReportTracker;
+    }
+
+    public User getUser() { return user; }
     public void setUser(User user) {
         this.user = user;
     }
 
-    /**
-     * The main method
-     *
-     * @param args command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

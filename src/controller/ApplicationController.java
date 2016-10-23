@@ -34,9 +34,16 @@ public class ApplicationController {
     public void HandleEditButton() {
         main.showEditInformationScreen();
     }
+
     public void HandleSubmitReportButton() {
         main.showSubmitReportScreen();
     }
 
-    public void HandleViewReportButton() { main.showViewReportScreen();}
+    public void HandleViewReportButton() {
+        main.showViewReportScreen();
+    }
+
+    public void HandleMapViewButton() {
+        main.showMapScreen();
+    }
 }

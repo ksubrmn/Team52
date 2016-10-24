@@ -49,12 +49,10 @@ public class ViewReportController {
         main.showApplicationScreen();
     }
     public void HandleViewReportButton() {
-
         WaterSourceReport selectedReport = (WaterSourceReport) Reports.getSelectionModel().getSelectedItem();
-
-        int reportNumber = selectedReport.getReportNumber();
-
-
-        main.showReportDetailsScreen(reportNumber);
+        if (selectedReport != null) {
+            int reportNumber = selectedReport.getReportNumber();
+            main.showReportDetailsScreen(reportNumber);
+        }
     }
 }

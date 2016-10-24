@@ -37,7 +37,10 @@ public class SubmitReportController {
     DatePicker dateField;
 
     @FXML
-    TextField locationField;
+    TextField latField;
+
+    @FXML
+    TextField longField;
 
 
     /**
@@ -51,21 +54,14 @@ public class SubmitReportController {
         for (WaterType type: WaterType.values()) {
             list.add(type);
         }
-
-
         waterType.setItems(list);
         waterType.getSelectionModel().select(0);
-
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {
             list1.add(type);
         }
-
-
         waterCondition.setItems(list1);
         waterCondition.getSelectionModel().select(0);
-
-
     }
 
     /**
@@ -74,28 +70,38 @@ public class SubmitReportController {
     public void HandleCancelButton() {
         main.showApplicationScreen();
     }
+
     public void HandleSubmitButton() {
+        try {
+            float latitude = Float.parseFloat(latField.getText());
+            float longitude = Float.parseFloat(longField.getText());
+            if (main.getWaterReportTracker().addReport(dateField.getValue(),
+                    timeField.getText(), latitude, longitude,
+                    main.getUser().getUsername(),
+                    (WaterType) waterType.getSelectionModel().getSelectedItem(),
+                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
 
-        if (main.getWaterReportTracker().addReport(dateField.getValue(),
-                timeField.getText(), locationField.getText(),
-                main.getUser().getUsername(),
-                (WaterType) waterType.getSelectionModel().getSelectedItem(),
-                (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Water Report Created");
+                alert.setHeaderText("Report created");
+                alert.setContentText("Water Report #" + main.getWaterReportTracker().size()
+                        + " created by " + main.getUser().getUsername());
+                alert.showAndWait();
+                main.showApplicationScreen();
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Water Report Created");
-            alert.setHeaderText("Report created");
-            alert.setContentText("Water Report #" + main.getWaterReportTracker().size()
-                    + " created by " + main.getUser().getUsername());
-            alert.showAndWait();
-            main.showApplicationScreen();
-
-        }
-        else {
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error creating new report");
+                alert.setContentText("Report could not be created");
+                alert.showAndWait();
+            }
+        } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error creating new report");
-            alert.setContentText("Report could not be created");
+            alert.setContentText("Make sure Latitude and Longitude are valid numbers");
             alert.showAndWait();
         }
     }

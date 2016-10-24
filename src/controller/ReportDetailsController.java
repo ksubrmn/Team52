@@ -12,7 +12,7 @@ import model.WaterSourceReport;
 public class ReportDetailsController {
 
     @FXML
-    TextField dateField, timeField, locationField,
+    TextField dateField, timeField, latField, longField,
             waterTypeField, waterConditionField, reportNumberField, reporterField;
 
     private Main main;
@@ -53,7 +53,8 @@ public class ReportDetailsController {
 
         dateField.setText(report.getDate().toString());
         timeField.setText(report.getTime());
-        locationField.setText(report.getLocation());
+        latField.setText("" + report.getLatitude());
+        longField.setText("" + report.getLongitude());
         waterTypeField.setText(report.getWaterType().toString());
         waterConditionField.setText(report.getWaterCondition().toString());
 

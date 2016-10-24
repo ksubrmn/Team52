@@ -10,7 +10,7 @@ public class WaterSourceReport {
     private String time;
     private int reportNumber;
     private String reporterName;
-    private String location;
+    private float latitude, longitude;
     private WaterType waterType;
     private WaterCondition waterCondition;
 
@@ -31,9 +31,21 @@ public class WaterSourceReport {
 
     public void setReporterName(String reporterName) { this.reporterName = reporterName; }
 
-    public String getLocation() { return location; }
+    public float getLatitude() {
+        return latitude;
+    }
 
-    public void setLocation(String location) { this.location = location; }
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
 
     public WaterType getWaterType() { return waterType; }
     public void setWaterType(WaterType accountType) { this.waterType = waterType; }
@@ -41,12 +53,13 @@ public class WaterSourceReport {
     public WaterCondition getWaterCondition() { return waterCondition; }
     public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
-    public WaterSourceReport(LocalDate date, String time, int reportNumber, String reporterName, String location, WaterType waterType, WaterCondition waterCondition) {
+    public WaterSourceReport(LocalDate date, String time, int reportNumber, String reporterName, float latitude, float longitude, WaterType waterType, WaterCondition waterCondition) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;
         this.reporterName = reporterName;
-        this.location = location;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.waterType = waterType;
         this.waterCondition = waterCondition;
     }

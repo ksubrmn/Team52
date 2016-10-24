@@ -19,7 +19,7 @@ import model.WaterSourceReport;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MapScreenController implements Initializable, MapComponentInitializedListener{
+public class MapScreenController implements Initializable, MapComponentInitializedListener {
 
     private Main main;
     private GoogleMap map;
@@ -27,10 +27,17 @@ public class MapScreenController implements Initializable, MapComponentInitializ
     @FXML
     private GoogleMapView mapView;
 
+    /**
+     * Handles returning to menu from map via Back button
+     */
     public void handleBackPressed() {
         main.showApplicationScreen();
     }
 
+    /**
+     * Initializes reference to facade
+     * @param main the facade
+     */
     public void setMainApp(Main main) {
         this.main = main;
         mapInitialized();

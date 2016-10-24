@@ -53,7 +53,9 @@ public class WaterSourceReport {
     public WaterCondition getWaterCondition() { return waterCondition; }
     public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
-    public WaterSourceReport(LocalDate date, String time, int reportNumber, String reporterName, float latitude, float longitude, WaterType waterType, WaterCondition waterCondition) {
+    public WaterSourceReport(LocalDate date, String time, int reportNumber,
+                             String reporterName, float latitude, float longitude,
+                             WaterType waterType, WaterCondition waterCondition) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;
@@ -64,11 +66,18 @@ public class WaterSourceReport {
         this.waterCondition = waterCondition;
     }
 
+    @Override
     public String toString() {
         return "#" + reportNumber + " by " + reporterName;
     }
 
+    /**
+     * Returns a HTML-friendly description of the data
+     * @return The HTML description
+     */
     public String getDescription() {
-        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude + ", " + longitude + "<br>Type: " + waterType + "<br>Condition: " + waterCondition + "<br>Created by " + reporterName + " on " + date;
+        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
+                + ", " + longitude + "<br>Type: " + waterType + "<br>Condition: "
+                + waterCondition + "<br>Created by " + reporterName + " on " + date;
     }
 }

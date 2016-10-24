@@ -19,9 +19,18 @@ public class HomeScreenController {
 
     private Main main;
 
-    @FXML
+    /**
+     * Handles pressing of the login button
+     */
     public void loginButtonPressed() {
+        main.showLoginScreen();
+    }
 
+    /**
+     * Handles pressing of the registration button
+     */
+    public void registrationButtonPressed() {
+        main.showCreateAccountScreen();
     }
 
 //    @FXML
@@ -39,15 +48,5 @@ public class HomeScreenController {
      */
     public void setMainApp(Main main) {
         this.main = main;
-        RegistrationButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                main.showCreateAccountScreen();
-            }
-        });
-        LoginButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                main.showLoginScreen();
-            }
-        });
     }
 }

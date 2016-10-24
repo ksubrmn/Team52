@@ -21,10 +21,10 @@
             </Text>
          </top>
          <center>
-            <Button fx:id="LoginButton" mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" />
+            <Button fx:id="LoginButton" mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" onAction="#loginButtonPressed" />
          </center>
          <bottom>
-            <Button fx:id="RegistrationButton" mnemonicParsing="false" text="Registration" BorderPane.alignment="CENTER">
+            <Button fx:id="RegistrationButton" mnemonicParsing="false" text="Registration" BorderPane.alignment="CENTER" onAction="#registrationButtonPressed">
                <BorderPane.margin>
                   <Insets bottom="100.0" />
                </BorderPane.margin>

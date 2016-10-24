@@ -64,10 +64,10 @@
       <ButtonBar prefHeight="40.0" prefWidth="200.0" />
       <ButtonBar layoutX="200.0" layoutY="341.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button fx:id="submitButton" mnemonicParsing="false" text="Submit" />
+          <Button fx:id="submitButton" mnemonicParsing="false" text="Submit" onAction="#submitButtonPressed" />
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel" />
+                <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel" onAction="#cancelButtonPressed" />
               </buttons>
             </ButtonBar>
         </buttons>

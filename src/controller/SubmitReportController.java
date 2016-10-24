@@ -15,7 +15,6 @@ import model.User;
 
 import java.time.LocalDate;
 
-
 public class SubmitReportController {
 
     private Main main;
@@ -41,7 +40,6 @@ public class SubmitReportController {
 
     @FXML
     TextField longField;
-
 
     /**
      * Sets Main application state
@@ -71,6 +69,9 @@ public class SubmitReportController {
         main.showApplicationScreen();
     }
 
+    /**
+     * Handles submit button action
+     */
     public void HandleSubmitButton() {
         try {
             float latitude = Float.parseFloat(latField.getText());
@@ -88,7 +89,6 @@ public class SubmitReportController {
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
                 main.showApplicationScreen();
-
             }
             else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

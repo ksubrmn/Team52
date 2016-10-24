@@ -16,18 +16,9 @@ public class ReportDetailsController {
             waterTypeField, waterConditionField, reportNumberField, reporterField;
 
     private Main main;
-
     private User user;
-
     private WaterReportTracker waterReportTracker;
-
     private WaterSourceReport report;
-
-
-
-
-
-
 
     /**
      * Handles cancel button pressed event

@@ -67,4 +67,8 @@ public class WaterSourceReport {
     public String toString() {
         return "#" + reportNumber + " by " + reporterName;
     }
+
+    public String getDescription() {
+        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude + ", " + longitude + "<br>Type: " + waterType + "<br>Condition: " + waterCondition + "<br>Created by " + reporterName + " on " + date;
+    }
 }

@@ -13,14 +13,14 @@ public class EditProfileController {
     TextField EmailBox, AddressBox, TitleBox;
 
     private Main main;
-
     private User user;
 
     /**
      * Handles save button press event
      */
     public void handleSavePressed() {
-        if (EmailBox.getText().equals("") || AddressBox.getText().equals("") || TitleBox.getText().equals("")) {
+        if (EmailBox.getText().equals("") || AddressBox.getText().equals("")
+                || TitleBox.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error saving account information");
@@ -48,7 +48,7 @@ public class EditProfileController {
 
     /**
      * Sets main app state for a given user
-     * @param main
+     * @param main the facade
      * @param user current user
      */
     public void setMainApp(Main main, User user) {

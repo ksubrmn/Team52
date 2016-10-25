@@ -25,52 +25,37 @@ public class LoginScreenController {
 
     private Main main;
 
-//    @FXML
-//    public void submitButtonPressed() {
-//        if (usernameTextField.getText().equals("user")
-//                && passwordField.getText().equals("password")) {
-//            //TODO: Remove this temp code
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            //alert.initOwner();
-//            alert.setTitle("Error");
-//            alert.setHeaderText("Failed Login Attempt");
-//            alert.setContentText("Username or password was incorrect");
-//            alert.showAndWait();
-//        }
-//    }
-//
-//    @FXML
-//    public void cancelButtonPressed() {
-//
-//    }
+    /**
+     * Handles pressing of the submit button
+     * Alerts user if login is not successful
+     */
+    public void submitButtonPressed() {
+        if (main.getAccountTracker().checkAccount(usernameTextField.getText(),
+                passwordField.getText())) {
+            main.setUser(main.getAccountTracker().getUser(usernameTextField.getText()));
+            main.showApplicationScreen();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            //alert.initOwner();
+            alert.setTitle("Error");
+            alert.setHeaderText("Failed Login Attempt");
+            alert.setContentText("Username or password was incorrect");
+            alert.showAndWait();
+        }
+    }
 
     /**
-     * Checks username and password
-     * Alerts user if login fails
-     * @param main
+     * Handles cancel button, sending user back to home screen
+     */
+    public void cancelButtonPressed() {
+        main.showHomeScreen();
+    }
+
+    /**
+     * Initializes reference to facade
+     * @param main the facade
      */
     public void setMainApp(Main main) {
         this.main = main;
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                if (main.getAccountTracker().checkAccount(usernameTextField.getText(),
-                        passwordField.getText())) {
-                    main.setUser(main.getAccountTracker().getUser(usernameTextField.getText()));
-                    main.showApplicationScreen();
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    //alert.initOwner();
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Failed Login Attempt");
-                    alert.setContentText("Username or password was incorrect");
-                    alert.showAndWait();
-                }
-            }
-        });
-        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                main.showHomeScreen();
-            }
-        });
     }
 }

@@ -32,14 +32,12 @@ public class ViewReportController {
      */
     public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker) {
         this.main = main;
-
         ObservableList<WaterSourceReport> list = FXCollections.observableArrayList();
         for (WaterSourceReport type: waterReportTracker.getReports()) {
             list.add(type);
         }
         Reports.setItems(list);
         Reports.getSelectionModel().select(0);
-
     }
 
     /**
@@ -49,12 +47,10 @@ public class ViewReportController {
         main.showApplicationScreen();
     }
     public void HandleViewReportButton() {
-
         WaterSourceReport selectedReport = (WaterSourceReport) Reports.getSelectionModel().getSelectedItem();
-
-        int reportNumber = selectedReport.getReportNumber();
-
-
-        main.showReportDetailsScreen(reportNumber);
+        if (selectedReport != null) {
+            int reportNumber = selectedReport.getReportNumber();
+            main.showReportDetailsScreen(reportNumber);
+        }
     }
 }

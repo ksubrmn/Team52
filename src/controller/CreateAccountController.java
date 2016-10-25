@@ -70,9 +70,8 @@ public class CreateAccountController {
     /**
      * Sets main app state
      * Gets account list
-     * @param main
+     * @param main The facade
      */
-
     public void setMainApp(Main main) {
         this.main = main;
         ObservableList<AccountType> list = FXCollections.observableArrayList();

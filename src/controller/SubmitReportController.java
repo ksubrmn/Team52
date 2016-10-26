@@ -3,17 +3,11 @@ package controller;
 import fxapp.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
-import model.AccountType;
 import model.WaterCondition;
 import model.WaterType;
 import model.User;
-
-import java.time.LocalDate;
 
 public class SubmitReportController {
 
@@ -76,7 +70,7 @@ public class SubmitReportController {
         try {
             float latitude = Float.parseFloat(latField.getText());
             float longitude = Float.parseFloat(longField.getText());
-            if (main.getWaterReportTracker().addReport(dateField.getValue(),
+            if (main.getWaterReportTracker().addSourceReport(dateField.getValue(),
                     timeField.getText(), latitude, longitude,
                     main.getUser().getUsername(),
                     (WaterType) waterType.getSelectionModel().getSelectedItem(),
@@ -85,7 +79,7 @@ public class SubmitReportController {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Water Report Created");
                 alert.setHeaderText("Report created");
-                alert.setContentText("Water Report #" + main.getWaterReportTracker().size()
+                alert.setContentText("Water Report #" + main.getWaterReportTracker().sourceReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
                 main.showApplicationScreen();

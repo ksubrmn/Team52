@@ -57,7 +57,7 @@ public class MapScreenController implements Initializable, MapComponentInitializ
                 .zoomControl(false)
                 .mapType(MapTypeIdEnum.TERRAIN);
         map = mapView.createMap(options);
-        for (WaterSourceReport report: main.getWaterReportTracker().getReports()) {
+        for (WaterSourceReport report: main.getWaterReportTracker().getSourceReports()) {
             MarkerOptions markerOptions = new MarkerOptions();
             LatLong loc = new LatLong(report.getLatitude(), report.getLongitude());
             markerOptions.position(loc)

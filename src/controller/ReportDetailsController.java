@@ -2,8 +2,6 @@ package controller;
 
 import fxapp.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.User;
 import model.WaterReportTracker;
@@ -12,22 +10,13 @@ import model.WaterSourceReport;
 public class ReportDetailsController {
 
     @FXML
-    TextField dateField, timeField, locationField,
+    TextField dateField, timeField, latField, longField,
             waterTypeField, waterConditionField, reportNumberField, reporterField;
 
     private Main main;
-
     private User user;
-
     private WaterReportTracker waterReportTracker;
-
     private WaterSourceReport report;
-
-
-
-
-
-
 
     /**
      * Handles cancel button pressed event
@@ -46,14 +35,15 @@ public class ReportDetailsController {
         this.user = user;
         this.waterReportTracker = waterReportTracker;
         System.out.println("here");
-        this.report = this.waterReportTracker.getReports().get(reportNumber -1);
+        this.report = this.waterReportTracker.getSourceReports().get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());
 
         dateField.setText(report.getDate().toString());
         timeField.setText(report.getTime());
-        locationField.setText(report.getLocation());
+        latField.setText("" + report.getLatitude());
+        longField.setText("" + report.getLongitude());
         waterTypeField.setText(report.getWaterType().toString());
         waterConditionField.setText(report.getWaterCondition().toString());
 

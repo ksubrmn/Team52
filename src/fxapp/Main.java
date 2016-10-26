@@ -65,6 +65,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Login Screen
+     */
     public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -80,6 +83,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Application Screen
+     */
     public void showApplicationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -95,6 +101,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Home Screen
+     */
     public void showHomeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -108,6 +117,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Account Creation
+     */
     public void showCreateAccountScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -123,6 +135,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Profile Editing
+     */
     public void showEditInformationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -136,6 +151,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to Submit a Report Screen
+     */
     public void showSubmitReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -149,6 +167,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to View Reports Screen
+     */
     public void showViewReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -162,6 +183,10 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to show information about a particular report
+     * @param reportNumber The report number to display
+     */
     public void showReportDetailsScreen(int reportNumber) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -175,17 +200,58 @@ public class Main extends Application {
         }
     }
 
-    public AccountTracker getAccountTracker() { return accountTracker; }
+    /**
+     * Changes display to show the Map with report pins
+     */
+    public void showMapScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/MapViewScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            MapScreenController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Map screen. fxml not loaded?");
+        }
+    }
 
+    /**
+     * Allows access to the accounts
+     * @return The tracker of the accounts
+     */
+    public AccountTracker getAccountTracker() {
+        return accountTracker;
+    }
+
+    /**
+     * Allows access to the water reports through the tracker
+     * @return The water report tracker
+     */
     public WaterReportTracker getWaterReportTracker() {
         return waterReportTracker;
     }
 
-    public User getUser() { return user; }
+    /**
+     * Gets the currently logged in user
+     * @return The user currently logged in
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets the current user
+     * @param user The user to set as logged in
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     * Launches the application
+     * @param args Launch arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

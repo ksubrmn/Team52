@@ -1,41 +1,70 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 import fxapp.Main;
-import model.User;
 import java.time.LocalDate;
-/**
- * Created by kalyasubramanian1 on 10/12/16.
- */
+
 public class WaterReportTracker {
-    private List<WaterSourceReport> reports;
+    private List<WaterSourceReport> sourceReports;
+    private List<WaterPurityReport> purityReports;
     private Main main;
 
     public WaterReportTracker() {
-        reports = new ArrayList<>();
+        sourceReports = new ArrayList<>();
+        purityReports = new ArrayList<>();
     }
 
-
-
-    public boolean addReport(LocalDate date, String time, String location, String username,
-                             WaterType waterType, WaterCondition waterCondition) {
+    public boolean addSourceReport(LocalDate date, String time, float latitude,
+                                   float longitude, String username,
+                                   WaterType waterType, WaterCondition waterCondition) {
         WaterSourceReport newReport = new WaterSourceReport(date, time,
-                reports.size() +1,
-                username,
-                location, waterType,
+                sourceReports.size() +1, username, latitude, longitude, waterType,
                 waterCondition );
-
-        reports.add(newReport);
-
-
+        sourceReports.add(newReport);
         return true;
     }
 
-    public int size() {
-        return reports.size();
+    /**
+     * Returns the number of sourceReports being tracked
+     * @return number of sourceReports
+     */
+    public int sourceReportSize() {
+        return sourceReports.size();
     }
 
-    public List<WaterSourceReport> getReports() {
-        return reports;
+    /**
+     * Gets the list of currently tracked sourceReports
+     * @return the list of currently tracked sourceReports
+     */
+    public List<WaterSourceReport> getSourceReports() {
+        return sourceReports;
+    }
+
+    /**
+     * Gets the list of currently tracked purityReports
+     * @return the list of currently tracked purityReports
+     */
+    public List<WaterPurityReport> getPurityReports() {
+        return purityReports;
+    }
+
+    /**
+     * Gets the number of purityReports being tracked
+     * @return number of purityReports
+     */
+    public int purityReportSize() {
+        return purityReports.size();
+    }
+
+    public boolean addPurityReport(LocalDate date, String time, String username,
+                                   float latitude, float longitude,
+                                   WaterCondition waterCondition, int virusPPM,
+                                   int contaminantPPM) {
+        WaterPurityReport newReport = new WaterPurityReport(date, time,
+                purityReports.size() + 1, username, latitude, longitude,
+                waterCondition, virusPPM, contaminantPPM);
+        purityReports.add(newReport);
+        return true;
     }
 }

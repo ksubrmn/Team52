@@ -4,7 +4,6 @@ import fxapp.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
 public class ApplicationController {
@@ -37,6 +36,10 @@ public class ApplicationController {
 
     public void HandleSubmitReportButton() {
         main.showSubmitReportScreen();
+    }
+
+    public void HandleSubmitPurityReportButton() {
+        main.showSubmitPurityReportScreen();
     }
 
     public void HandleViewReportButton() {

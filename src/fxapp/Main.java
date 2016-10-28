@@ -1,24 +1,29 @@
 package fxapp;
 
-import controller.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import controller.ApplicationController;
+import controller.CreateAccountController;
+import controller.EditProfileController;
+import controller.HomeScreenController;
+import controller.LoginScreenController;
+import controller.MapScreenController;
+import controller.ReportDetailsController;
+import controller.SubmitPurityReportController;
+import controller.SubmitReportController;
+import controller.ViewReportController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.LoadException;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.AccountTracker;
 import model.AccountType;
 import model.User;
 import model.WaterReportTracker;
-
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Main extends Application {
 
@@ -215,6 +220,24 @@ public class Main extends Application {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Map screen. fxml not loaded?");
         }
     }
+
+
+    /**
+     * Changes display to Submit a Purity Report Screen
+     */
+    public void showSubmitPurityReportScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/SubmitPurityReportScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            SubmitPurityReportController controller = loader.getController();
+            controller.setMainApp(this, user);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Purity Report screen. fxml not loaded?");
+        }
+    }
+
 
     /**
      * Allows access to the accounts

@@ -11,6 +11,7 @@ import controller.HomeScreenController;
 import controller.LoginScreenController;
 import controller.MapScreenController;
 import controller.ReportDetailsController;
+import controller.SelectReportController;
 import controller.SubmitPurityReportController;
 import controller.SubmitReportController;
 import controller.ViewReportController;
@@ -37,6 +38,7 @@ public class Main extends Application {
 
     private WaterReportTracker waterReportTracker;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
 //        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
@@ -45,6 +47,7 @@ public class Main extends Application {
 //        primaryStage.show();
         accountTracker = new AccountTracker();
         waterReportTracker = new WaterReportTracker();
+
         accountTracker.addAccount("user", "pass", AccountType.User);
         mainScreen = primaryStage;
         initHomeScreen(mainScreen);
@@ -222,6 +225,25 @@ public class Main extends Application {
     }
 
 
+
+
+    /**
+     * Changes display to Select Reports Screen
+     */
+    public void showSelectReportScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/SelectReportScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            SelectReportController controller = loader.getController();
+            controller.setMainApp(this, user, waterReportTracker);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select Report screen. fxml not loaded?");
+        }
+    }
+
+
     /**
      * Changes display to Submit a Purity Report Screen
      */
@@ -254,6 +276,7 @@ public class Main extends Application {
     public WaterReportTracker getWaterReportTracker() {
         return waterReportTracker;
     }
+
 
     /**
      * Gets the currently logged in user

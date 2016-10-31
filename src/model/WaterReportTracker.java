@@ -1,9 +1,10 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import fxapp.Main;
-import java.time.LocalDate;
 
 public class WaterReportTracker {
     private List<WaterSourceReport> sourceReports;
@@ -59,8 +60,8 @@ public class WaterReportTracker {
 
     public boolean addPurityReport(LocalDate date, String time, String username,
                                    float latitude, float longitude,
-                                   WaterCondition waterCondition, int virusPPM,
-                                   int contaminantPPM) {
+                                   WaterCondition waterCondition, float virusPPM,
+                                   float contaminantPPM) {
         WaterPurityReport newReport = new WaterPurityReport(date, time,
                 purityReports.size() + 1, username, latitude, longitude,
                 waterCondition, virusPPM, contaminantPPM);

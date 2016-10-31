@@ -4,10 +4,14 @@ import fxapp.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import model.User;
 import model.WaterCondition;
 import model.WaterType;
-import model.User;
 
 public class SubmitReportController {
 
@@ -42,12 +46,15 @@ public class SubmitReportController {
     public void setMainApp(Main main, User user) {
         this.main = main;
         this.user = user;
+
         ObservableList<WaterType> list = FXCollections.observableArrayList();
         for (WaterType type: WaterType.values()) {
             list.add(type);
         }
         waterType.setItems(list);
         waterType.getSelectionModel().select(0);
+
+
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {
             list1.add(type);

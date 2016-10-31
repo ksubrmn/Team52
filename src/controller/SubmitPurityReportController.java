@@ -4,6 +4,7 @@ import fxapp.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -32,7 +33,8 @@ public class SubmitPurityReportController {
     TextField longField;
 
     @FXML
-    ComboBox waterCondition;
+    //ComboBox waterCondition;
+    ComboBox<WaterCondition> waterCondition;
 
     @FXML
     TextField virusField;
@@ -51,11 +53,13 @@ public class SubmitPurityReportController {
     public void setMainApp(Main main, User user) {
         this.main = main;
         this.user = user;
+        waterCondition = new ComboBox<>();
 
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {
             list1.add(type);
         }
+
         waterCondition.setItems(list1);
         waterCondition.getSelectionModel().select(0);
     }
@@ -69,41 +73,43 @@ public class SubmitPurityReportController {
 
 
 
-//    /**
-//     * Handles submit button action
-//     */
-//
-//
-//    public void HandleSubmitButton() {
-//        try {
-//            float latitude = Float.parseFloat(latField.getText());
-//            float longitude = Float.parseFloat(longField.getText());
-//            if (main.getWaterReportTracker().addSourceReport(dateField.getValue(),
-//                    timeField.getText(), latitude, longitude,
-//                    main.getUser().getUsername(),
-//                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
-//
-//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                alert.setTitle("Water Purity Report Created");
-//                alert.setHeaderText("Purity Report created");
-//                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().sourceReportSize()
-//                        + " created by " + main.getUser().getUsername());
-//                alert.showAndWait();
-//                main.showApplicationScreen();
-//            }
-//            else {
-//                Alert alert = new Alert(Alert.AlertType.ERROR);
-//                alert.setTitle("Error");
-//                alert.setHeaderText("Error creating new report");
-//                alert.setContentText("Report could not be created");
-//                alert.showAndWait();
-//            }
-//        } catch (NumberFormatException e) {
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("Error");
-//            alert.setHeaderText("Error creating new report");
-//            alert.setContentText("Make sure Latitude and Longitude are valid numbers");
-//            alert.showAndWait();
-//        }
-//    }
+    /**
+     * Handles submit button action
+     */
+
+
+    public void HandleSubmitButton() {
+        try {
+            float latitude = Float.parseFloat(latField.getText());
+            float longitude = Float.parseFloat(longField.getText());
+            float virus = Float.parseFloat(virusField.getText());
+            float con = Float.parseFloat(contaminantField.getText());
+            if (main.getWaterReportTracker().addPurityReport(dateField.getValue(),
+                    timeField.getText(),
+                    main.getUser().getUsername(), latitude, longitude,
+                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem(), virus, con)) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Water Purity Report Created");
+                alert.setHeaderText("Purity Report created");
+                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().sourceReportSize()
+                        + " created by " + main.getUser().getUsername());
+                alert.showAndWait();
+                main.showApplicationScreen();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error creating new report");
+                alert.setContentText("Report could not be created");
+                alert.showAndWait();
+            }
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error creating new report");
+            alert.setContentText("Make sure Latitude and Longitude are valid numbers");
+            alert.showAndWait();
+        }
+    }
 }

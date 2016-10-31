@@ -17,6 +17,6 @@
       <Button fx:id="SubmitButton" layoutX="234.0" layoutY="188.0" mnemonicParsing="false" onAction="#HandleSubmitReportButton" text="Submit Source Report" />
       <Button fx:id="ViewReportsButton" layoutX="257.0" layoutY="262.0" mnemonicParsing="false" onAction="#HandleViewReportButton" text="View Reports" />
       <Button fx:id="mapbutton" layoutX="235.0" layoutY="299.0" mnemonicParsing="false" onAction="#HandleMapViewButton" text="Water Availibility Map" />
-      <Button fx:id="SubmitPurityButton" layoutX="241.0" layoutY="225.0" mnemonicParsing="false" text="Submit Purity Report" />
+      <Button fx:id="SubmitPurityButton" layoutX="241.0" layoutY="225.0" mnemonicParsing="false" onAction="#HandleSubmitPurityReportButton" text="Submit Purity Report" />
    </children>
 </AnchorPane>

@@ -33,8 +33,9 @@ public class SubmitPurityReportController {
     TextField longField;
 
     @FXML
-    //ComboBox waterCondition;
-    ComboBox<WaterCondition> waterCondition;
+    ComboBox waterCondition;
+
+    //ComboBox<WaterCondition> waterCondition;
 
     @FXML
     TextField virusField;
@@ -53,7 +54,6 @@ public class SubmitPurityReportController {
     public void setMainApp(Main main, User user) {
         this.main = main;
         this.user = user;
-        waterCondition = new ComboBox<>();
 
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {

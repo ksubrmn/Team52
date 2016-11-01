@@ -57,6 +57,18 @@ public class ApplicationController {
         main.showViewReportScreen();
     }
 
+    public void HandleViewPurityReportsButton() {
+        if ( main.getUser().getAccountType() == AccountType.Manager){
+            main.showViewPurityReportsScreen();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Access Denied");
+            alert.setHeaderText("Access Denied");
+            alert.setContentText("Only Managers can view Water Purity Reports.");
+            alert.showAndWait();
+        }
+    }
+
     public void HandleMapViewButton() {
         main.showMapScreen();
     }

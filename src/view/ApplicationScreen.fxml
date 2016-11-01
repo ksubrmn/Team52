@@ -13,10 +13,11 @@
          </font>
       </Text>
       <Button fx:id="LogoutButton" layoutX="273.0" layoutY="346.0" mnemonicParsing="false" text="Logout" />
-      <Button layoutX="264.0" layoutY="151.0" mnemonicParsing="false" onAction="#HandleEditButton" text="Edit Profile" textAlignment="CENTER" />
-      <Button fx:id="SubmitButton" layoutX="234.0" layoutY="188.0" mnemonicParsing="false" onAction="#HandleSubmitReportButton" text="Submit Source Report" />
-      <Button fx:id="ViewReportsButton" layoutX="257.0" layoutY="262.0" mnemonicParsing="false" onAction="#HandleViewReportButton" text="View Reports" />
+      <Button layoutX="263.0" layoutY="134.0" mnemonicParsing="false" onAction="#HandleEditButton" text="Edit Profile" textAlignment="CENTER" />
+      <Button fx:id="SubmitButton" layoutX="234.0" layoutY="167.0" mnemonicParsing="false" onAction="#HandleSubmitReportButton" text="Submit Source Report" />
+      <Button fx:id="ViewReportsButton" layoutX="239.0" layoutY="232.0" mnemonicParsing="false" onAction="#HandleViewReportButton" text="View Source Reports" />
       <Button fx:id="mapbutton" layoutX="235.0" layoutY="299.0" mnemonicParsing="false" onAction="#HandleMapViewButton" text="Water Availibility Map" />
-      <Button fx:id="SubmitPurityButton" layoutX="241.0" layoutY="225.0" mnemonicParsing="false" onAction="#HandleSubmitPurityReportButton" text="Submit Purity Report" />
+      <Button fx:id="SubmitPurityButton" layoutX="237.0" layoutY="200.0" mnemonicParsing="false" onAction="#HandleSubmitPurityReportButton" text="Submit Purity Report" />
+      <Button fx:id="ViewPurityReportsButton" layoutX="242.0" layoutY="264.0" mnemonicParsing="false" onAction="#HandleViewPurityReportsButton" text="View Purity Reports" />
    </children>
 </AnchorPane>

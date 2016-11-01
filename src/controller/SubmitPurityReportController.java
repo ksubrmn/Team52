@@ -92,7 +92,7 @@ public class SubmitPurityReportController {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Water Purity Report Created");
                 alert.setHeaderText("Purity Report created");
-                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().sourceReportSize()
+                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().purityReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
                 main.showApplicationScreen();

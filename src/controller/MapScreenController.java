@@ -1,5 +1,8 @@
 package controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.event.UIEventType;
@@ -11,13 +14,12 @@ import com.lynden.gmapsfx.javascript.object.MapOptions;
 import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import com.lynden.gmapsfx.javascript.object.Marker;
 import com.lynden.gmapsfx.javascript.object.MarkerOptions;
+
 import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import netscape.javascript.JSObject;
 import model.WaterSourceReport;
-import java.net.URL;
-import java.util.ResourceBundle;
+import netscape.javascript.JSObject;
 
 public class MapScreenController implements Initializable, MapComponentInitializedListener {
 
@@ -46,7 +48,7 @@ public class MapScreenController implements Initializable, MapComponentInitializ
     @Override
     public void mapInitialized() {
         MapOptions options = new MapOptions();
-        LatLong center = new LatLong(34, -88);
+        LatLong center = new LatLong(33.8, -84.4);
         options.center(center)
                 .zoom(9)
                 .overviewMapControl(false)

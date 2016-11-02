@@ -6,8 +6,8 @@ public class WaterPurityReport {
 
     private LocalDate date;
     private String time, reporterName;
-    private float latitude, longitude;
-    private int reportNumber, virusPPM, contaminantPPM;
+    private float latitude, longitude, virusPPM, contaminantPPM;
+    private int reportNumber;
     private WaterCondition waterCondition;
 
     //Getters and setter for properties
@@ -52,7 +52,7 @@ public class WaterPurityReport {
         this.reportNumber = reportNumber;
     }
 
-    public int getVirusPPM() {
+    public float getVirusPPM() {
         return virusPPM;
     }
 
@@ -60,7 +60,7 @@ public class WaterPurityReport {
         this.virusPPM = virusPPM;
     }
 
-    public int getContaminantPPM() {
+    public float getContaminantPPM() {
         return contaminantPPM;
     }
 
@@ -86,8 +86,8 @@ public class WaterPurityReport {
 
     public WaterPurityReport(LocalDate date, String time, int reportNumber,
                              String reporterName, float latitude, float longitude,
-                             WaterCondition waterCondition, int virusPPM,
-                             int contaminantPPM) {
+                             WaterCondition waterCondition, float virusPPM,
+                             float contaminantPPM) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;

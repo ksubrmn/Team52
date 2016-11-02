@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationController">
    <children>
       <Text layoutX="109.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged into Application!">
          <font>
@@ -13,9 +13,11 @@
          </font>
       </Text>
       <Button fx:id="LogoutButton" layoutX="273.0" layoutY="346.0" mnemonicParsing="false" text="Logout" />
-      <Button layoutX="264.0" layoutY="151.0" mnemonicParsing="false" onAction="#HandleEditButton" text="Edit Profile" textAlignment="CENTER" />
-      <Button fx:id="SubmitButton" layoutX="254.0" layoutY="200.0" mnemonicParsing="false" onAction="#HandleSubmitReportButton" text="Submit Report" />
-      <Button fx:id="ViewReportsButton" layoutX="258.0" layoutY="251.0" mnemonicParsing="false" onAction="#HandleViewReportButton" text="View Reports" />
-      <Button fx:id="mapbutton" layoutX="235.0" layoutY="299.0" mnemonicParsing="false" text="Water Availibility Map" onAction="#HandleMapViewButton" />
+      <Button layoutX="263.0" layoutY="134.0" mnemonicParsing="false" onAction="#HandleEditButton" text="Edit Profile" textAlignment="CENTER" />
+      <Button fx:id="SubmitButton" layoutX="234.0" layoutY="167.0" mnemonicParsing="false" onAction="#HandleSubmitReportButton" text="Submit Source Report" />
+      <Button fx:id="ViewReportsButton" layoutX="239.0" layoutY="232.0" mnemonicParsing="false" onAction="#HandleViewReportButton" text="View Source Reports" />
+      <Button fx:id="mapbutton" layoutX="235.0" layoutY="299.0" mnemonicParsing="false" onAction="#HandleMapViewButton" text="Water Availibility Map" />
+      <Button fx:id="SubmitPurityButton" layoutX="237.0" layoutY="200.0" mnemonicParsing="false" onAction="#HandleSubmitPurityReportButton" text="Submit Purity Report" />
+      <Button fx:id="ViewPurityReportsButton" layoutX="242.0" layoutY="264.0" mnemonicParsing="false" onAction="#HandleViewPurityReportsButton" text="View Purity Reports" />
    </children>
 </AnchorPane>

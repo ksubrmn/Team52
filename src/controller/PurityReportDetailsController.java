@@ -4,19 +4,19 @@ import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.User;
+import model.WaterPurityReport;
 import model.WaterReportTracker;
-import model.WaterSourceReport;
 
-public class ReportDetailsController {
+public class PurityReportDetailsController {
 
     @FXML
     TextField dateField, timeField, latField, longField,
-            waterTypeField, waterConditionField, reportNumberField, reporterField;
+            waterConditionField,virusField,contaminantField, reportNumberField, reporterField;
 
     private Main main;
     private User user;
     private WaterReportTracker waterReportTracker;
-    private WaterSourceReport report;
+    private WaterPurityReport report;
 
     /**
      * Handles cancel button pressed event
@@ -35,7 +35,7 @@ public class ReportDetailsController {
         this.user = user;
         this.waterReportTracker = waterReportTracker;
         System.out.println("here");
-        this.report = this.waterReportTracker.getSourceReports().get(reportNumber -1);
+        this.report = this.waterReportTracker.getPurityReports().get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());
@@ -44,8 +44,9 @@ public class ReportDetailsController {
         timeField.setText(report.getTime());
         latField.setText("" + report.getLatitude());
         longField.setText("" + report.getLongitude());
-        waterTypeField.setText(report.getWaterType().toString());
         waterConditionField.setText(report.getWaterCondition().toString());
+        virusField.setText("" + report.getVirusPPM());
+        contaminantField.setText("" + report.getContaminantPPM());
 
     }
 }

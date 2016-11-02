@@ -1,42 +1,71 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import fxapp.Main;
-import model.User;
-import java.time.LocalDate;
 
 public class WaterReportTracker {
-    private List<WaterSourceReport> reports;
+    private List<WaterSourceReport> sourceReports;
+    private List<WaterPurityReport> purityReports;
     private Main main;
 
     public WaterReportTracker() {
-        reports = new ArrayList<>();
+        sourceReports = new ArrayList<>();
+        purityReports = new ArrayList<>();
     }
 
-    public boolean addReport(LocalDate date, String time, float latitude,
-                             float longitude, String username,
-                             WaterType waterType, WaterCondition waterCondition) {
+    public boolean addSourceReport(LocalDate date, String time, float latitude,
+                                   float longitude, String username,
+                                   WaterType waterType, WaterCondition waterCondition) {
         WaterSourceReport newReport = new WaterSourceReport(date, time,
-                reports.size() +1, username, latitude, longitude, waterType,
+                sourceReports.size() +1, username, latitude, longitude, waterType,
                 waterCondition );
-        reports.add(newReport);
+        sourceReports.add(newReport);
         return true;
     }
 
     /**
-     * Returns the number of reports being tracked
-     * @return number of reports
+     * Returns the number of sourceReports being tracked
+     * @return number of sourceReports
      */
-    public int size() {
-        return reports.size();
+    public int sourceReportSize() {
+        return sourceReports.size();
     }
 
     /**
-     * Gets the list of currently tracked reports
-     * @return the list of currently tracked reports
+     * Gets the list of currently tracked sourceReports
+     * @return the list of currently tracked sourceReports
      */
-    public List<WaterSourceReport> getReports() {
-        return reports;
+    public List<WaterSourceReport> getSourceReports() {
+        return sourceReports;
+    }
+
+    /**
+     * Gets the list of currently tracked purityReports
+     * @return the list of currently tracked purityReports
+     */
+    public List<WaterPurityReport> getPurityReports() {
+        return purityReports;
+    }
+
+    /**
+     * Gets the number of purityReports being tracked
+     * @return number of purityReports
+     */
+    public int purityReportSize() {
+        return purityReports.size();
+    }
+
+    public boolean addPurityReport(LocalDate date, String time, String username,
+                                   float latitude, float longitude,
+                                   WaterCondition waterCondition, float virusPPM,
+                                   float contaminantPPM) {
+        WaterPurityReport newReport = new WaterPurityReport(date, time,
+                purityReports.size() + 1, username, latitude, longitude,
+                waterCondition, virusPPM, contaminantPPM);
+        purityReports.add(newReport);
+        return true;
     }
 }

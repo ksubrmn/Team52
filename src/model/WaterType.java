@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Enum of wat ertypes
+ * Enum of water types
  */
 public enum WaterType {
     Bottled, Well, Stream, Lake, Spring, Other

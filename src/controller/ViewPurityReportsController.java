@@ -6,9 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import model.*;
+import model.User;
+import model.WaterPurityReport;
+import model.WaterReportTracker;
 
-public class ViewReportController {
+public class ViewPurityReportsController {
 
     private Main main;
 
@@ -29,8 +31,8 @@ public class ViewReportController {
      */
     public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker) {
         this.main = main;
-        ObservableList<WaterSourceReport> list = FXCollections.observableArrayList();
-        for (WaterSourceReport type: waterReportTracker.getSourceReports()) {
+        ObservableList<WaterPurityReport> list = FXCollections.observableArrayList();
+        for (WaterPurityReport type: waterReportTracker.getPurityReports()) {
             list.add(type);
         }
         Reports.setItems(list);
@@ -44,10 +46,10 @@ public class ViewReportController {
         main.showApplicationScreen();
     }
     public void HandleViewReportButton() {
-        WaterSourceReport selectedReport = (WaterSourceReport) Reports.getSelectionModel().getSelectedItem();
+        WaterPurityReport selectedReport = (WaterPurityReport) Reports.getSelectionModel().getSelectedItem();
         if (selectedReport != null) {
             int reportNumber = selectedReport.getReportNumber();
-            main.showReportDetailsScreen(reportNumber);
+            main.showPurityReportDetailsScreen(reportNumber);
         }
     }
 }

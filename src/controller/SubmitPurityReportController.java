@@ -11,9 +11,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import model.User;
 import model.WaterCondition;
-import model.WaterType;
 
-public class SubmitReportController {
+public class SubmitPurityReportController {
 
     private Main main;
     private User user;
@@ -22,22 +21,31 @@ public class SubmitReportController {
     Button CancelReportButton;
 
     @FXML
-    ComboBox waterType;
-
-    @FXML
-    ComboBox waterCondition;
+    DatePicker dateField;
 
     @FXML
     TextField timeField;
-
-    @FXML
-    DatePicker dateField;
 
     @FXML
     TextField latField;
 
     @FXML
     TextField longField;
+
+    @FXML
+    ComboBox waterCondition;
+
+    //ComboBox<WaterCondition> waterCondition;
+
+    @FXML
+    TextField virusField;
+
+    @FXML
+    TextField contaminantField;
+
+
+
+
 
     /**
      * Sets Main application state
@@ -47,18 +55,11 @@ public class SubmitReportController {
         this.main = main;
         this.user = user;
 
-        ObservableList<WaterType> list = FXCollections.observableArrayList();
-        for (WaterType type: WaterType.values()) {
-            list.add(type);
-        }
-        waterType.setItems(list);
-        waterType.getSelectionModel().select(0);
-
-
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {
             list1.add(type);
         }
+
         waterCondition.setItems(list1);
         waterCondition.getSelectionModel().select(0);
     }
@@ -70,23 +71,28 @@ public class SubmitReportController {
         main.showApplicationScreen();
     }
 
+
+
     /**
      * Handles submit button action
      */
+
+
     public void HandleSubmitButton() {
         try {
             float latitude = Float.parseFloat(latField.getText());
             float longitude = Float.parseFloat(longField.getText());
-            if (main.getWaterReportTracker().addSourceReport(dateField.getValue(),
-                    timeField.getText(), latitude, longitude,
-                    main.getUser().getUsername(),
-                    (WaterType) waterType.getSelectionModel().getSelectedItem(),
-                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem())) {
+            float virus = Float.parseFloat(virusField.getText());
+            float con = Float.parseFloat(contaminantField.getText());
+            if (main.getWaterReportTracker().addPurityReport(dateField.getValue(),
+                    timeField.getText(),
+                    main.getUser().getUsername(), latitude, longitude,
+                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem(), virus, con)) {
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Water Report Created");
-                alert.setHeaderText("Report created");
-                alert.setContentText("Water Report #" + main.getWaterReportTracker().sourceReportSize()
+                alert.setTitle("Water Purity Report Created");
+                alert.setHeaderText("Purity Report created");
+                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().purityReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
                 main.showApplicationScreen();

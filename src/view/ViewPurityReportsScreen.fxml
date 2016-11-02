@@ -6,9 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewReportController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPurityReportsController">
    <children>
-      <Text layoutX="167.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Source Report">
+      <Text layoutX="167.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Purity Report">
          <font>
             <Font size="36.0" />
          </font>

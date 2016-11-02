@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import model.AccountType;
 
 public class ApplicationController {
 
@@ -39,8 +40,33 @@ public class ApplicationController {
         main.showSubmitReportScreen();
     }
 
+    public void HandleSubmitPurityReportButton() {
+        if (main.getUser().getAccountType() == AccountType.Worker || main.getUser().getAccountType() == AccountType.Manager){
+            main.showSubmitPurityReportScreen();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Access Denied");
+            alert.setHeaderText("Access Denied");
+            alert.setContentText("Only Workers and Managers can create Water Purity Reports.");
+            alert.showAndWait();
+        }
+
+    }
+
     public void HandleViewReportButton() {
         main.showViewReportScreen();
+    }
+
+    public void HandleViewPurityReportsButton() {
+        if ( main.getUser().getAccountType() == AccountType.Manager){
+            main.showViewPurityReportsScreen();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Access Denied");
+            alert.setHeaderText("Access Denied");
+            alert.setContentText("Only Managers can view Water Purity Reports.");
+            alert.showAndWait();
+        }
     }
 
     public void HandleMapViewButton() {

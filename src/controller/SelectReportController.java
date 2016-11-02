@@ -6,9 +6,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import model.*;
+import model.User;
+import model.WaterReportTracker;
+import model.WaterSourceReport;
 
-public class ViewReportController {
+public class SelectReportController {
 
     private Main main;
 

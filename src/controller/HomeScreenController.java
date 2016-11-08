@@ -44,7 +44,7 @@ public class HomeScreenController {
 
     /**
      * Handles login vs registration choice
-     * @param main
+     * @param main the facade
      */
     public void setMainApp(Main main) {
         this.main = main;

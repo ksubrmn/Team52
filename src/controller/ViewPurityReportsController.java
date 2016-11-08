@@ -27,7 +27,7 @@ public class ViewPurityReportsController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main the facade
      */
     public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker) {
         this.main = main;

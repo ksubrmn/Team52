@@ -57,7 +57,7 @@ public class Main extends Application {
 
     /**
      * Initialize home screen to welcome screen
-     * @param mainScreen
+     * @param mainScreen the main screen
      */
     public void initHomeScreen(Stage mainScreen) {
         try {

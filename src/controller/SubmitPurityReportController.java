@@ -49,7 +49,7 @@ public class SubmitPurityReportController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main The facade
      */
     public void setMainApp(Main main, User user) {
         this.main = main;
@@ -76,8 +76,6 @@ public class SubmitPurityReportController {
     /**
      * Handles submit button action
      */
-
-
     public void HandleSubmitButton() {
         try {
             float latitude = Float.parseFloat(latField.getText());

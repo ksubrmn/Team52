@@ -27,7 +27,7 @@ public class ReportDetailsController {
 
     /**
      * Sets main app state for a given user
-     * @param main
+     * @param main The facade
      * @param user current user
      */
     public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker, int reportNumber) {

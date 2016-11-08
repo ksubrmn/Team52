@@ -41,7 +41,7 @@ public class SubmitReportController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main The facade
      */
     public void setMainApp(Main main, User user) {
         this.main = main;

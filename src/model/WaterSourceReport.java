@@ -51,6 +51,18 @@ public class WaterSourceReport {
     public WaterCondition getWaterCondition() { return waterCondition; }
     public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
+    /**
+     * Creates new Water Source Report
+     *
+     * @param date the date the report was submitted
+     * @param time the time the report was submitted
+     * @param reportNumber the report number
+     * @param reporterName the user who reported the source
+     * @param latitude the latitude location of the source
+     * @param longitude the longitude location of the source
+     * @param waterType the type of water at the location
+     * @param waterCondition the condition of the water at the location
+     */
     public WaterSourceReport(LocalDate date, String time, int reportNumber,
                              String reporterName, float latitude, float longitude,
                              WaterType waterType, WaterCondition waterCondition) {

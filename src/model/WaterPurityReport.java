@@ -84,6 +84,20 @@ public class WaterPurityReport {
         this.time = time;
     }
 
+    /**
+     * Creates new Water Purity Report
+     *
+     * @param date the date the report was submitted
+     * @param time the time the report was submitted
+     * @param reportNumber the report number
+     * @param reporterName the name of the user who reported
+     * @param latitude the latitude of the water source
+     * @param longitude the longitude of the water source
+     * @param waterCondition the water condition at the source
+     * @param virusPPM the virus count in parts per million at the source
+     * @param contaminantPPM the contaminant count in parts per million at the
+     *                       source
+     */
     public WaterPurityReport(LocalDate date, String time, int reportNumber,
                              String reporterName, float latitude, float longitude,
                              WaterCondition waterCondition, float virusPPM,

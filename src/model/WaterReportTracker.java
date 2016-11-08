@@ -11,11 +11,26 @@ public class WaterReportTracker {
     private List<WaterPurityReport> purityReports;
     private Main main;
 
+    /**
+     * Creates new Water Report Tracker
+     */
     public WaterReportTracker() {
         sourceReports = new ArrayList<>();
         purityReports = new ArrayList<>();
     }
 
+    /**
+     * Adds a new Source Report to the list of Source Reports
+     *
+     * @param date the date of the report
+     * @param time the time of the report
+     * @param latitude the latitude of the location of the source
+     * @param longitude the longitude of the location of the source
+     * @param username the user who reported the source
+     * @param waterType the type of water at the source
+     * @param waterCondition the condition of the water at the source
+     * @return true if the report was added
+     */
     public boolean addSourceReport(LocalDate date, String time, float latitude,
                                    float longitude, String username,
                                    WaterType waterType, WaterCondition waterCondition) {
@@ -58,6 +73,20 @@ public class WaterReportTracker {
         return purityReports.size();
     }
 
+    /**
+     * Adds a purity report to the list of purity reports
+     *
+     * @param date the date the report was submitted
+     * @param time the time the report was submitted
+     * @param username the user who submitted the report
+     * @param latitude the latitude of the location of the water source
+     * @param longitude the longitude of the location of the water source
+     * @param waterCondition the water condition at the source
+     * @param virusPPM the virus level in parts per million at the source
+     * @param contaminantPPM the contaminant level in parts per million at the
+     *                       source
+     * @return true if the report was added successfully
+     */
     public boolean addPurityReport(LocalDate date, String time, String username,
                                    float latitude, float longitude,
                                    WaterCondition waterCondition, float virusPPM,

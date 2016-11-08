@@ -41,11 +41,19 @@ public class User implements Serializable {
 
     }
 
+    @Override
     public String toString() {
         String res = "User: " + username + ":  " + accountType;
         return res;
     }
 
+    /**
+     * Creates new User
+     *
+     * @param username the username
+     * @param password the password
+     * @param accountType the account type
+     */
     public User (String username, String password, AccountType accountType) {
         this.username = username;
         this.password = password;

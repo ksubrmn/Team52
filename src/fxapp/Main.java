@@ -224,14 +224,11 @@ public class Main extends Application {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Map screen. fxml not loaded?");
         }
     }
-
-
-
 /*
 
     */
-    /**
-     * Changes display to Select Reports Screen
+/**
+     * Changes to Select Report Screen
      *//*
 
     public void showSelectReportScreen() {
@@ -247,6 +244,7 @@ public class Main extends Application {
         }
     }
 */
+
 
 
     /**

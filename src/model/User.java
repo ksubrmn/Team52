@@ -5,10 +5,10 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
     private String email, address, title;
-    private AccountType accountType;
+    private final AccountType accountType;
 
 
     /* **********************

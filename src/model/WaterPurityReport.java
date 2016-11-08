@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class WaterPurityReport {
 
-    private LocalDate date;
-    private String time, reporterName;
-    private float latitude, longitude, virusPPM, contaminantPPM;
-    private int reportNumber;
-    private WaterCondition waterCondition;
+    private final LocalDate date;
+    private final String time, reporterName;
+    private final float latitude, longitude, virusPPM, contaminantPPM;
+    private final int reportNumber;
+    private final WaterCondition waterCondition;
 
     //Getters and setter for properties
 

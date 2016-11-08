@@ -3,13 +3,13 @@ package model;
 import java.time.LocalDate;
 
 public class WaterSourceReport {
-    private LocalDate date;
-    private String time;
-    private int reportNumber;
-    private String reporterName;
-    private float latitude, longitude;
-    private WaterType waterType;
-    private WaterCondition waterCondition;
+    private final LocalDate date;
+    private final String time;
+    private final int reportNumber;
+    private final String reporterName;
+    private final float latitude, longitude;
+    private final WaterType waterType;
+    private final WaterCondition waterCondition;
 
 
     //Getters and setters for properties

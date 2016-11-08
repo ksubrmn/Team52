@@ -2,9 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.Date;
-/**
- * Created by kalyasubramanian1 on 10/12/16.
- */
+
 public class WaterSourceReport {
     private LocalDate date;
     private String time;

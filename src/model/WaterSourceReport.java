@@ -1,7 +1,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class WaterSourceReport {
     private LocalDate date;
@@ -16,18 +15,18 @@ public class WaterSourceReport {
     //Getters and setters for properties
 
     public LocalDate getDate() {return date; }
-    public void setDate(LocalDate date) { this.date = date; }
+    //public void setDate(LocalDate date) { this.date = date; }
 
     public String getTime() {return time; }
-    public void setTime(String time) { this.time = time; }
+    //public void setTime(String time) { this.time = time; }
 
     public int getReportNumber() { return reportNumber; }
 
-    public void setReportNumber(int reportNumber) { this.reportNumber = reportNumber; }
+    //public void setReportNumber(int reportNumber) { this.reportNumber = reportNumber; }
 
     public String getReporterName() { return reporterName; }
 
-    public void setReporterName(String reporterName) { this.reporterName = reporterName; }
+    //public void setReporterName(String reporterName) { this.reporterName = reporterName; }
 
     public float getLatitude() {
         return latitude;
@@ -37,19 +36,19 @@ public class WaterSourceReport {
         return longitude;
     }
 
-    public void setLatitude(float latitude) {
+/*    public void setLatitude(float latitude) {
         this.latitude = latitude;
-    }
+    }*/
 
-    public void setLongitude(float longitude) {
+/*    public void setLongitude(float longitude) {
         this.longitude = longitude;
-    }
+    }*/
 
     public WaterType getWaterType() { return waterType; }
-    public void setWaterType(WaterType accountType) { this.waterType = waterType; }
+    //public void setWaterType(WaterType accountType) { this.waterType = waterType; }
 
     public WaterCondition getWaterCondition() { return waterCondition; }
-    public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
+    //public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
 
     /**
      * Creates new Water Source Report

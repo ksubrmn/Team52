@@ -6,10 +6,6 @@
 package model;
 
 import com.google.gson.Gson;
-import model.WaterPurityReport;
-import model.WaterSourceReport;
-import model.User;
-import model.AccountType;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,25 +24,23 @@ import java.util.logging.Logger;
 
 public class ModelFacade {
     private static  ModelFacade instance = new ModelFacade();
-    private static int nextNum = 10;
+    //private static int nextNum = 10;
     private List<User> users = new ArrayList<>();
-    private List<WaterSourceReport> sourceReports = new ArrayList<>();
-    private List<WaterPurityReport> purityReports = new ArrayList<>();
-    private int selectedSourceReport = 0;
-    private int selectedPurityReport = 0;
+    //private int selectedSourceReport = 0;
+    //private int selectedPurityReport = 0;
     private int selectedUser = 0;
 
     public static ModelFacade getInstance() { return instance; }
 
-    private ModelFacade() { generateUniverse();}
+    private ModelFacade() {
+        //generateUniverse();
+    }
 
     public void dumpData() {
         System.out.println("Dumping Data from Model");
         System.out.println("Selected User: " + selectedUser + " : " + users.get(selectedUser));
         System.out.println("User List:");
-        for (User u : users) {
-            System.out.println(u);
-        }
+        users.forEach(u -> {System.out.println(u);});
     }
 
     public void addUser(String username, String password, AccountType type) {
@@ -84,8 +78,6 @@ public class ModelFacade {
                     users.add(new User(tokens[0], tokens[1], AccountType.valueOf(tokens[2])));
                 }
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -104,12 +96,9 @@ public class ModelFacade {
     public void loadModelBinary()  {
         try {
             try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.bin"))) {
-                List<User> users1 = (List<User>) in.readObject();
-                users = users1;
+                users = (List<User>) in.readObject();
             }
-        } catch (IOException ex) {
-            Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | IOException ex) {
             Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -134,17 +123,15 @@ public class ModelFacade {
                 Gson gs = new Gson();
                 instance = gs.fromJson(json, ModelFacade.class);
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        }catch (IOException ex) {
             Logger.getLogger(ModelFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    private void generateUniverse() {
+/*    private void generateUniverse() {
 
-    }
+    }*/
 
     public Iterable<User> getPlanets() {
         return users;

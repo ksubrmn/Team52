@@ -1,8 +1,5 @@
 package model;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.Serializable;
 
@@ -18,13 +15,13 @@ public class User implements Serializable {
      * Getters and setters for properties
      */
     public String getUsername() { return username; }
-    public void setUsername(String name) { username = name; }
+    //public void setUsername(String name) { username = name; }
 
     public String getPassword() {return password; }
-    public void setPassword(String pass) { password = pass; }
+    //public void setPassword(String pass) { password = pass; }
 
     public AccountType getAccountType() { return accountType; }
-    public void setAccountType(AccountType accountType) { this.accountType = accountType; }
+    //public void setAccountType(AccountType accountType) { this.accountType = accountType; }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
@@ -43,8 +40,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        String res = "User: " + username + ":  " + accountType;
-        return res;
+        return "User: " + username + ":  " + accountType;
     }
 
     /**

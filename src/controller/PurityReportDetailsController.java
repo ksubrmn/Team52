@@ -3,7 +3,6 @@ package controller;
 import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import model.User;
 import model.WaterPurityReport;
 import model.WaterReportTracker;
 
@@ -14,7 +13,6 @@ public class PurityReportDetailsController {
             waterConditionField,virusField,contaminantField, reportNumberField, reporterField;
 
     private Main main;
-    private User user;
     private WaterReportTracker waterReportTracker;
     private WaterPurityReport report;
 
@@ -28,11 +26,9 @@ public class PurityReportDetailsController {
     /**
      * Sets main app state for a given user
      * @param main the facade
-     * @param user current user
      */
-    public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker, int reportNumber) {
+    public void setMainApp(Main main, WaterReportTracker waterReportTracker, int reportNumber) {
         this.main = main;
-        this.user = user;
         this.waterReportTracker = waterReportTracker;
         System.out.println("here");
         this.report = this.waterReportTracker.getPurityReports().get(reportNumber -1);

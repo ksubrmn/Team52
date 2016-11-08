@@ -1,8 +1,6 @@
 package controller;
 
 import fxapp.Main;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;

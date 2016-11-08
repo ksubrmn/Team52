@@ -16,73 +16,73 @@ public class WaterPurityReport {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+   /* public void setDate(LocalDate date) {
         this.date = date;
-    }
+    }*/
 
     public String getReporterName() {
         return reporterName;
     }
 
-    public void setReporterName(String name) {
+/*    public void setReporterName(String name) {
         this.reporterName = reporterName;
-    }
+    }*/
 
     public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(float latitude) {
+/*    public void setLatitude(float latitude) {
         this.latitude = latitude;
-    }
+    }*/
 
     public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(float longitude) {
+/*    public void setLongitude(float longitude) {
         this.longitude = longitude;
-    }
+    }*/
 
     public int getReportNumber() {
         return reportNumber;
     }
 
-    public void setReportNumber(int reportNumber) {
+/*    public void setReportNumber(int reportNumber) {
         this.reportNumber = reportNumber;
-    }
+    }*/
 
     public float getVirusPPM() {
         return virusPPM;
     }
 
-    public void setVirusPPM(int virusPPM) {
+/*    public void setVirusPPM(int virusPPM) {
         this.virusPPM = virusPPM;
-    }
+    }*/
 
     public float getContaminantPPM() {
         return contaminantPPM;
     }
 
-    public void setContaminantPPM(int contaminantPPM) {
+/*    public void setContaminantPPM(int contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
-    }
+    }*/
 
     public WaterCondition getWaterCondition() {
         return waterCondition;
     }
 
-    public void setWaterCondition(WaterCondition waterCondition) {
+/*    public void setWaterCondition(WaterCondition waterCondition) {
         this.waterCondition = waterCondition;
-    }
+    }*/
 
     public String getTime() {
         return time;
     }
-
+/*
     public void setTime(String time) {
         this.time = time;
-    }
+    }*/
 
     /**
      * Creates new Water Purity Report

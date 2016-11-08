@@ -12,8 +12,6 @@ public class ViewReportController {
 
     private Main main;
 
-    private WaterReportTracker waterReportTracker;
-
     @FXML
     Button ViewReportButton;
 
@@ -27,12 +25,10 @@ public class ViewReportController {
      * Sets Main application state
      * @param main The facade
      */
-    public void setMainApp(Main main, User user, WaterReportTracker waterReportTracker) {
+    public void setMainApp(Main main, WaterReportTracker waterReportTracker) {
         this.main = main;
         ObservableList<WaterSourceReport> list = FXCollections.observableArrayList();
-        for (WaterSourceReport type: waterReportTracker.getSourceReports()) {
-            list.add(type);
-        }
+        list.addAll(waterReportTracker.getSourceReports());
         Reports.setItems(list);
         Reports.getSelectionModel().select(0);
     }

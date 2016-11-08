@@ -29,8 +29,6 @@ import model.WaterReportTracker;
 
 public class Main extends Application {
 
-    private Stage mainScreen;
-
     private BorderPane rootLayout;
 
     private AccountTracker accountTracker;
@@ -50,8 +48,7 @@ public class Main extends Application {
         waterReportTracker = new WaterReportTracker();
 
         accountTracker.addAccount("user", "pass", AccountType.User);
-        mainScreen = primaryStage;
-        initHomeScreen(mainScreen);
+        initHomeScreen(primaryStage);
     }
 
     /**
@@ -170,7 +167,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitReportController controller = loader.getController();
-            controller.setMainApp(this, user);
+            controller.setMainApp(this);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
         }
@@ -227,7 +224,7 @@ public class Main extends Application {
 /*
 
     */
-/**
+    /**
      * Changes to Select Report Screen
      *//*
 
@@ -257,7 +254,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitPurityReportController controller = loader.getController();
-            controller.setMainApp(this, user);
+            controller.setMainApp(this);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Purity Report screen. fxml not loaded?");
         }

@@ -186,7 +186,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewReportController controller = loader.getController();
-            controller.setMainApp(this, user, waterReportTracker);
+            controller.setMainApp(this, waterReportTracker);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
         }

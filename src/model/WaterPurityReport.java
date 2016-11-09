@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class WaterPurityReport {
 
-    private LocalDate date;
-    private String time, reporterName;
-    private float latitude, longitude, virusPPM, contaminantPPM;
-    private int reportNumber;
-    private WaterCondition waterCondition;
+    private final LocalDate date;
+    private final String time, reporterName;
+    private final float latitude, longitude, virusPPM, contaminantPPM;
+    private final int reportNumber;
+    private final WaterCondition waterCondition;
 
     //Getters and setter for properties
 
@@ -16,74 +16,88 @@ public class WaterPurityReport {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+   /* public void setDate(LocalDate date) {
         this.date = date;
-    }
+    }*/
 
     public String getReporterName() {
         return reporterName;
     }
 
-    public void setReporterName(String name) {
+/*    public void setReporterName(String name) {
         this.reporterName = reporterName;
-    }
+    }*/
 
     public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(float latitude) {
+/*    public void setLatitude(float latitude) {
         this.latitude = latitude;
-    }
+    }*/
 
     public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(float longitude) {
+/*    public void setLongitude(float longitude) {
         this.longitude = longitude;
-    }
+    }*/
 
     public int getReportNumber() {
         return reportNumber;
     }
 
-    public void setReportNumber(int reportNumber) {
+/*    public void setReportNumber(int reportNumber) {
         this.reportNumber = reportNumber;
-    }
+    }*/
 
     public float getVirusPPM() {
         return virusPPM;
     }
 
-    public void setVirusPPM(int virusPPM) {
+/*    public void setVirusPPM(int virusPPM) {
         this.virusPPM = virusPPM;
-    }
+    }*/
 
     public float getContaminantPPM() {
         return contaminantPPM;
     }
 
-    public void setContaminantPPM(int contaminantPPM) {
+/*    public void setContaminantPPM(int contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
-    }
+    }*/
 
     public WaterCondition getWaterCondition() {
         return waterCondition;
     }
 
-    public void setWaterCondition(WaterCondition waterCondition) {
+/*    public void setWaterCondition(WaterCondition waterCondition) {
         this.waterCondition = waterCondition;
-    }
+    }*/
 
     public String getTime() {
         return time;
     }
-
+/*
     public void setTime(String time) {
         this.time = time;
-    }
+    }*/
 
+    /**
+     * Creates new Water Purity Report
+     *
+     * @param date the date the report was submitted
+     * @param time the time the report was submitted
+     * @param reportNumber the report number
+     * @param reporterName the name of the user who reported
+     * @param latitude the latitude of the water source
+     * @param longitude the longitude of the water source
+     * @param waterCondition the water condition at the source
+     * @param virusPPM the virus count in parts per million at the source
+     * @param contaminantPPM the contaminant count in parts per million at the
+     *                       source
+     */
     public WaterPurityReport(LocalDate date, String time, int reportNumber,
                              String reporterName, float latitude, float longitude,
                              WaterCondition waterCondition, float virusPPM,

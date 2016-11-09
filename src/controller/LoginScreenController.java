@@ -1,9 +1,6 @@
 package controller;
 
 import fxapp.Main;
-import model.User;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -79,7 +76,7 @@ public class LoginScreenController {
             {
                 System.out.println("Not expected to deserialize " + deserializedObject.getClass().getName());
             }
-            
+
             ois.close();
 
 

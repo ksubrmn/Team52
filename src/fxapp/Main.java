@@ -12,7 +12,6 @@ import controller.LoginScreenController;
 import controller.MapScreenController;
 import controller.PurityReportDetailsController;
 import controller.ReportDetailsController;
-import controller.SelectReportController;
 import controller.SubmitPurityReportController;
 import controller.SubmitReportController;
 import controller.ViewPurityReportsController;
@@ -29,8 +28,6 @@ import model.User;
 import model.WaterReportTracker;
 
 public class Main extends Application {
-
-    private Stage mainScreen;
 
     private BorderPane rootLayout;
 
@@ -51,13 +48,12 @@ public class Main extends Application {
         waterReportTracker = new WaterReportTracker();
 
         accountTracker.addAccount("user", "pass", AccountType.User);
-        mainScreen = primaryStage;
-        initHomeScreen(mainScreen);
+        initHomeScreen(primaryStage);
     }
 
     /**
      * Initialize home screen to welcome screen
-     * @param mainScreen
+     * @param mainScreen the main screen
      */
     public void initHomeScreen(Stage mainScreen) {
         try {
@@ -171,7 +167,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitReportController controller = loader.getController();
-            controller.setMainApp(this, user);
+            controller.setMainApp(this);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
         }
@@ -187,7 +183,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewReportController controller = loader.getController();
-            controller.setMainApp(this, user, waterReportTracker);
+            controller.setMainApp(this, waterReportTracker);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
         }
@@ -204,7 +200,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ReportDetailsController controller = loader.getController();
-            controller.setMainApp(this, user, waterReportTracker, reportNumber);
+            controller.setMainApp(this, waterReportTracker, reportNumber);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
         }
@@ -225,13 +221,13 @@ public class Main extends Application {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Map screen. fxml not loaded?");
         }
     }
+/*
 
-
-
-
+    */
     /**
-     * Changes display to Select Reports Screen
-     */
+     * Changes to Select Report Screen
+     *//*
+
     public void showSelectReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -244,6 +240,8 @@ public class Main extends Application {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select Report screen. fxml not loaded?");
         }
     }
+*/
+
 
 
     /**
@@ -256,7 +254,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitPurityReportController controller = loader.getController();
-            controller.setMainApp(this, user);
+            controller.setMainApp(this);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Purity Report screen. fxml not loaded?");
         }
@@ -275,7 +273,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewPurityReportsController controller = loader.getController();
-            controller.setMainApp(this, user, waterReportTracker);
+            controller.setMainApp(this, waterReportTracker);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Purity Reports screen. fxml not loaded?");
         }
@@ -293,7 +291,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             PurityReportDetailsController controller = loader.getController();
-            controller.setMainApp(this, user, waterReportTracker, reportNumber);
+            controller.setMainApp(this, waterReportTracker, reportNumber);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Purity Report screen. fxml not loaded?");
         }

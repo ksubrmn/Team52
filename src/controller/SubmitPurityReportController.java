@@ -9,13 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import model.User;
 import model.WaterCondition;
 
 public class SubmitPurityReportController {
 
     private Main main;
-    private User user;
 
     @FXML
     Button CancelReportButton;
@@ -49,11 +47,10 @@ public class SubmitPurityReportController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main The facade
      */
-    public void setMainApp(Main main, User user) {
+    public void setMainApp(Main main) {
         this.main = main;
-        this.user = user;
 
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
         for (WaterCondition type: WaterCondition.values()) {
@@ -76,8 +73,6 @@ public class SubmitPurityReportController {
     /**
      * Handles submit button action
      */
-
-
     public void HandleSubmitButton() {
         try {
             float latitude = Float.parseFloat(latField.getText());

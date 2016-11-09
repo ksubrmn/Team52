@@ -2,7 +2,6 @@ package controller;
 
 import fxapp.Main;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -17,15 +16,13 @@ public class ApplicationController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main the facade
      */
     public void setMainApp(Main main) {
         this.main = main;
-        LogoutButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
+        LogoutButton.setOnAction((ActionEvent e) -> {
                 main.setUser(null);
                 main.showHomeScreen();
-            }
         });
     }
 
@@ -36,10 +33,16 @@ public class ApplicationController {
         main.showEditInformationScreen();
     }
 
+    /**
+     * Handles submit report action
+     */
     public void HandleSubmitReportButton() {
         main.showSubmitReportScreen();
     }
 
+    /**
+     * Handles submit purity report action
+     */
     public void HandleSubmitPurityReportButton() {
         if (main.getUser().getAccountType() == AccountType.Worker || main.getUser().getAccountType() == AccountType.Manager){
             main.showSubmitPurityReportScreen();
@@ -53,10 +56,16 @@ public class ApplicationController {
 
     }
 
+    /**
+     * Handles view report action
+     */
     public void HandleViewReportButton() {
         main.showViewReportScreen();
     }
 
+    /**
+     * Handles view purity report action
+     */
     public void HandleViewPurityReportsButton() {
         if ( main.getUser().getAccountType() == AccountType.Manager){
             main.showViewPurityReportsScreen();
@@ -69,6 +78,9 @@ public class ApplicationController {
         }
     }
 
+    /**
+     * Handles view map action
+     */
     public void HandleMapViewButton() {
         main.showMapScreen();
     }

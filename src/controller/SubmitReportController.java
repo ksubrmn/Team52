@@ -9,14 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import model.User;
 import model.WaterCondition;
 import model.WaterType;
 
 public class SubmitReportController {
 
     private Main main;
-    private User user;
 
     @FXML
     Button CancelReportButton;
@@ -41,11 +39,10 @@ public class SubmitReportController {
 
     /**
      * Sets Main application state
-     * @param main
+     * @param main The facade
      */
-    public void setMainApp(Main main, User user) {
+    public void setMainApp(Main main) {
         this.main = main;
-        this.user = user;
 
         ObservableList<WaterType> list = FXCollections.observableArrayList();
         for (WaterType type: WaterType.values()) {

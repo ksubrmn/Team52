@@ -44,9 +44,8 @@ public class SubmitPurityReportController {
     @FXML
     TextField contaminantField;
 
-
-
-
+    @FXML
+    TextField LocationName;
 
     /**
      * Sets Main application state
@@ -85,8 +84,8 @@ public class SubmitPurityReportController {
             if (main.getWaterReportTracker().addPurityReport(dateField.getValue(),
                     timeField.getText(),
                     main.getUser().getUsername(), latitude, longitude,
-                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem(), virus, con)) {
-
+                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem(),
+                    virus, con, LocationName.getText())) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Water Purity Report Created");
                 alert.setHeaderText("Purity Report created");

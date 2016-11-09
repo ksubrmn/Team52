@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class WaterPurityReport implements Serializable{
 
     private final LocalDate date;
-    private final String time, reporterName;
+    private final String time, reporterName, location;
     private final float latitude, longitude, virusPPM, contaminantPPM;
     private final int reportNumber;
     private final WaterCondition waterCondition;
@@ -102,7 +102,7 @@ public class WaterPurityReport implements Serializable{
     public WaterPurityReport(LocalDate date, String time, int reportNumber,
                              String reporterName, float latitude, float longitude,
                              WaterCondition waterCondition, float virusPPM,
-                             float contaminantPPM) {
+                             float contaminantPPM, String location) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;
@@ -112,6 +112,7 @@ public class WaterPurityReport implements Serializable{
         this.waterCondition = waterCondition;
         this.virusPPM = virusPPM;
         this.contaminantPPM = contaminantPPM;
+        this.location = location;
     }
 
     @Override
@@ -128,5 +129,13 @@ public class WaterPurityReport implements Serializable{
                 + ", " + longitude + "<br>Condition: " + waterCondition
                 + "<br>Virus PPM: " + virusPPM + "  Contaminant PPM: " + contaminantPPM
                 + "<br>Created by " + reporterName + " on " + date;
+    }
+
+    /**
+     * Gets the location name
+     * @return The location name
+     */
+    public String getLocation() {
+        return location;
     }
 }

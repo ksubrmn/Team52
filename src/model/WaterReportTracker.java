@@ -96,10 +96,10 @@ public class WaterReportTracker implements Serializable {
     public boolean addPurityReport(LocalDate date, String time, String username,
                                    float latitude, float longitude,
                                    WaterCondition waterCondition, float virusPPM,
-                                   float contaminantPPM) {
+                                   float contaminantPPM, String location) {
         WaterPurityReport newReport = new WaterPurityReport(date, time,
                 purityReports.size() + 1, username, latitude, longitude,
-                waterCondition, virusPPM, contaminantPPM);
+                waterCondition, virusPPM, contaminantPPM, location);
         return purityReports.add(newReport);
     }
 }

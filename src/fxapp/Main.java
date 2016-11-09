@@ -322,7 +322,7 @@ public class Main extends Application {
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewHistoryGraphController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, location, year, type);
         } catch (IOException e) {
             Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select History Graph screen. fxml not loaded?");
         }

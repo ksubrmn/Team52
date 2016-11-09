@@ -8,6 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import model.WaterPurityReport;
 import model.WaterReportTracker;
+import model.WaterSourceReport;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.List;
 
 public class ViewPurityReportsController {
 
@@ -28,6 +33,31 @@ public class ViewPurityReportsController {
      */
     public void setMainApp(Main main, WaterReportTracker waterReportTracker) {
         this.main = main;
+        try
+        {
+            final FileInputStream fis = new FileInputStream("purityreports.out");
+            final ObjectInputStream ois = new ObjectInputStream(fis);
+            final Object deserializedObject = ois.readObject();
+
+            if (deserializedObject instanceof List)
+            {
+                main.setPurityReports( (List<WaterPurityReport>) deserializedObject);
+
+            }
+            else
+            {
+                System.out.println("Not expected to deserialize " + deserializedObject.getClass().getName());
+            }
+
+            ois.close();
+
+
+        }
+        catch (Exception ex)
+        {
+            // Print stack trace to standard error for simple demonstration
+            ex.printStackTrace();
+        }
         ObservableList<WaterPurityReport> list = FXCollections.observableArrayList();
         list.addAll(waterReportTracker.getPurityReports());
         Reports.setItems(list);

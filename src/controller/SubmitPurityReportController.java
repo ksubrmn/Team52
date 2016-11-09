@@ -11,6 +11,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import model.WaterCondition;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
 public class SubmitPurityReportController {
 
     private Main main;
@@ -90,6 +93,18 @@ public class SubmitPurityReportController {
                 alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().purityReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
+                try
+                {
+                    final FileOutputStream fo = new FileOutputStream("purityreports.out");
+                    final ObjectOutputStream oos = new ObjectOutputStream(fo);
+                    oos.writeObject(main.getWaterReportTracker().getPurityReports());
+                    oos.flush();
+                    oos.close();
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
                 main.showApplicationScreen();
             }
             else {
@@ -103,7 +118,7 @@ public class SubmitPurityReportController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error creating new report");
-            alert.setContentText("Make sure Latitude and Longitude are valid numbers");
+            alert.setContentText("Make sure fields valid numbers");
             alert.showAndWait();
         }
     }

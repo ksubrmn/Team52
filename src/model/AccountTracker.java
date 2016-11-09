@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountTracker {
+public class AccountTracker implements Serializable {
 
     private List<User> accounts;
 
@@ -12,6 +13,12 @@ public class AccountTracker {
      */
     public AccountTracker() {
         accounts = new ArrayList<>();
+    }
+    public void setList(List<User> accounts) {
+        this.accounts = accounts;
+    }
+    public List<User> getAccounts(){
+        return accounts;
     }
 
     /**

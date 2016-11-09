@@ -1,6 +1,7 @@
 package controller;
 
 import fxapp.Main;
+import model.User;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,6 +9,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import java.util.List;
+
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
 
 public class LoginScreenController {
 
@@ -57,5 +64,30 @@ public class LoginScreenController {
      */
     public void setMainApp(Main main) {
         this.main = main;
+        try
+        {
+            final FileInputStream fis = new FileInputStream("users.out");
+            final ObjectInputStream ois = new ObjectInputStream(fis);
+            final Object deserializedObject = ois.readObject();
+            System.out.println("Object Type to deserialize " + deserializedObject.getClass().getName());
+            if (deserializedObject instanceof List)
+            {
+                main.setAccountTracker( (List<User>) deserializedObject);
+
+            }
+            else
+            {
+                System.out.println("Not expected to deserialize " + deserializedObject.getClass().getName());
+            }
+            
+            ois.close();
+
+
+        }
+        catch (Exception ex)
+        {
+            // Print stack trace to standard error for simple demonstration
+            ex.printStackTrace();
+        }
     }
 }

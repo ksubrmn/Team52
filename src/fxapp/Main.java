@@ -1,5 +1,5 @@
 package fxapp;
-
+import java.util.List;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -310,6 +310,10 @@ public class Main extends Application {
     public AccountTracker getAccountTracker() {
         return accountTracker;
     }
+    public void setAccountTracker(List<User> l) {
+        accountTracker.setList(l);
+    }
+
 
     /**
      * Allows access to the water reports through the tracker

@@ -9,7 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.AccountType;
-import model.ModelFacade;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class CreateAccountController {
 
@@ -43,12 +45,18 @@ public class CreateAccountController {
                 alert.setTitle("Account");
                 alert.setHeaderText("Create new account");
                 alert.setContentText("Account " + NewUsernameBox.getText() + " created");
-                ModelFacade model = ModelFacade.getInstance();
-                model.addUser(NewUsernameBox.getText(), NewPasswordBox.getText(), ((AccountType) AccountTypeSelection.getSelectionModel().getSelectedItem()));
-                model.saveModelBinary();
-                model.saveModelJson();
-                model.saveModelText();
-                alert.showAndWait();
+                try
+                {
+                    final FileOutputStream fo = new FileOutputStream("users.out");
+                    final ObjectOutputStream oos = new ObjectOutputStream(fo);
+                    oos.writeObject(main.getAccountTracker().getAccounts());
+                    oos.flush();
+                    oos.close();
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
                 main.showHomeScreen();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);

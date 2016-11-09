@@ -1,12 +1,21 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WaterReportTracker {
-    private final List<WaterSourceReport> sourceReports;
-    private final List<WaterPurityReport> purityReports;
+public class WaterReportTracker implements Serializable {
+    private  List<WaterSourceReport> sourceReports;
+    private  List<WaterPurityReport> purityReports;
+
+    public void setSourceReports(List<WaterSourceReport> sourceReports) {
+        this.sourceReports = sourceReports;
+    }
+
+    public void setPurityReports(List<WaterPurityReport> purityReports) {
+        this.purityReports = purityReports;
+    }
 
     /**
      * Creates new Water Report Tracker
@@ -15,6 +24,7 @@ public class WaterReportTracker {
         sourceReports = new ArrayList<>();
         purityReports = new ArrayList<>();
     }
+
 
     /**
      * Adds a new Source Report to the list of Source Reports

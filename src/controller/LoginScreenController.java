@@ -8,7 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.util.List;
 
-
+import model.User;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -66,7 +66,7 @@ public class LoginScreenController {
             final FileInputStream fis = new FileInputStream("users.out");
             final ObjectInputStream ois = new ObjectInputStream(fis);
             final Object deserializedObject = ois.readObject();
-            System.out.println("Object Type to deserialize " + deserializedObject.getClass().getName());
+
             if (deserializedObject instanceof List)
             {
                 main.setAccountTracker( (List<User>) deserializedObject);

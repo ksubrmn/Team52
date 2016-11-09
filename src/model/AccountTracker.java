@@ -6,7 +6,7 @@ import java.util.List;
 
 public class AccountTracker implements Serializable {
 
-    private final List<User> accounts;
+    private  List<User> accounts;
 
     /**
      * Creates a new AccountTracker instance

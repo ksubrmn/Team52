@@ -22,10 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.AccountTracker;
-import model.AccountType;
-import model.User;
-import model.WaterReportTracker;
+import model.*;
 
 public class Main extends Application {
 
@@ -310,6 +307,14 @@ public class Main extends Application {
     }
     public void setAccountTracker(List<User> l) {
         accountTracker.setList(l);
+    }
+
+    public void setPurityReports(List<WaterPurityReport> l) {
+        waterReportTracker.setPurityReports(l);
+    }
+
+    public void setSourceReports(List<WaterSourceReport> l) {
+        waterReportTracker.setSourceReports(l);
     }
 
 

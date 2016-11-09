@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class WaterSourceReport {
+public class WaterSourceReport implements Serializable{
     private final LocalDate date;
     private final String time;
     private final int reportNumber;

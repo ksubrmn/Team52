@@ -12,6 +12,9 @@ import javafx.scene.control.TextField;
 import model.WaterCondition;
 import model.WaterType;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
 public class SubmitReportController {
 
     private Main main;
@@ -86,6 +89,19 @@ public class SubmitReportController {
                 alert.setContentText("Water Report #" + main.getWaterReportTracker().sourceReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
+
+                try
+                {
+                    final FileOutputStream fo = new FileOutputStream("sourcereports.out");
+                    final ObjectOutputStream oos = new ObjectOutputStream(fo);
+                    oos.writeObject(main.getWaterReportTracker().getSourceReports());
+                    oos.flush();
+                    oos.close();
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
                 main.showApplicationScreen();
             }
             else {

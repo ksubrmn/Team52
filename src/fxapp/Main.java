@@ -12,8 +12,10 @@ import controller.LoginScreenController;
 import controller.MapScreenController;
 import controller.PurityReportDetailsController;
 import controller.ReportDetailsController;
+import controller.SelectHistoryGraphController;
 import controller.SubmitPurityReportController;
 import controller.SubmitReportController;
+import controller.ViewHistoryGraphController;
 import controller.ViewPurityReportsController;
 import controller.ViewReportController;
 import javafx.application.Application;
@@ -294,9 +296,37 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * Changes display to show information about a particular purity report
+     */
+    public void showSelectHistoryGraphScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/SelectHistoryGraphScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            SelectHistoryGraphController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select History Graph screen. fxml not loaded?");
+        }
+    }
 
-
-
+    /**
+     * Changes display to show information about a particular purity report
+     */
+    public void showViewHistoryGraphScreen(String location, int year, String type) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("../view/ViewHistoryGraphScreen.fxml"));
+            AnchorPane loginScreen = loader.load();
+            rootLayout.setCenter(loginScreen);
+            ViewHistoryGraphController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select History Graph screen. fxml not loaded?");
+        }
+    }
 
     /**
      * Allows access to the accounts

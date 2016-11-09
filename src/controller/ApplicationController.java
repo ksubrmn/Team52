@@ -84,4 +84,16 @@ public class ApplicationController {
     public void HandleMapViewButton() {
         main.showMapScreen();
     }
+
+    public void HandleHistoryReportButton() {
+        if ( main.getUser().getAccountType() == AccountType.Manager) {
+            main.showSelectHistoryGraphScreen();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Access Denied");
+            alert.setHeaderText("Access Denied");
+            alert.setContentText("Only Managers can view History Reports.");
+            alert.showAndWait();
+        }
+    }
 }

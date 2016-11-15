@@ -13,8 +13,8 @@ public class PurityReportDetailsController {
             waterConditionField,virusField,contaminantField, reportNumberField, reporterField;
 
     private Main main;
-    private WaterReportTracker waterReportTracker;
-    private WaterPurityReport report;
+    //private WaterReportTracker waterReportTracker;
+    //private WaterPurityReport report;
 
     /**
      * Handles cancel button pressed event
@@ -29,9 +29,9 @@ public class PurityReportDetailsController {
      */
     public void setMainApp(Main main, WaterReportTracker waterReportTracker, int reportNumber) {
         this.main = main;
-        this.waterReportTracker = waterReportTracker;
+        //this.waterReportTracker = waterReportTracker;
         System.out.println("here");
-        this.report = this.waterReportTracker.getPurityReports().get(reportNumber -1);
+        WaterPurityReport report = waterReportTracker.getPurityReports().get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());

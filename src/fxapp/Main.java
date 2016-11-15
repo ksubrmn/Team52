@@ -223,9 +223,7 @@ public class Main extends Application {
 /*
 
     */
-    /**
-     * Changes to Select Report Screen
-     *//*
+    /*
 
     public void showSelectReportScreen() {
         try {

@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 
+@SuppressWarnings("ALL")
 public class LoginScreenController {
 
     @FXML

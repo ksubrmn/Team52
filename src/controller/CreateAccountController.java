@@ -12,7 +12,9 @@ import model.AccountType;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collections;
 
+@SuppressWarnings("ALL")
 public class CreateAccountController {
 
     private Main main;
@@ -89,9 +91,7 @@ public class CreateAccountController {
     public void setMainApp(Main main) {
         this.main = main;
         ObservableList<AccountType> list = FXCollections.observableArrayList();
-        for (AccountType type: AccountType.values()) {
-            list.add(type);
-        }
+        Collections.addAll(list, AccountType.values());
         AccountTypeSelection.setItems(list);
         AccountTypeSelection.getSelectionModel().select(0);
     }

@@ -13,6 +13,7 @@ import model.WaterCondition;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collections;
 
 public class SubmitPurityReportController {
 
@@ -51,13 +52,12 @@ public class SubmitPurityReportController {
      * Sets Main application state
      * @param main The facade
      */
+    @SuppressWarnings("unchecked")
     public void setMainApp(Main main) {
         this.main = main;
 
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
-        for (WaterCondition type: WaterCondition.values()) {
-            list1.add(type);
-        }
+        Collections.addAll(list1, WaterCondition.values());
 
         waterCondition.setItems(list1);
         waterCondition.getSelectionModel().select(0);

@@ -7,7 +7,7 @@ import model.User;
 import static org.junit.Assert.*;
 
 /**
- * Created by kalyasubramanian1 on 11/14/16.
+ * Created by Kalya Subramanian on 11/14/16.
  */
 public class AccountTrackerTest {
     @org.junit.Before

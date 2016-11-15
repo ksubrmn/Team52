@@ -20,6 +20,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class ViewHistoryGraphController {
 
     private Main main;

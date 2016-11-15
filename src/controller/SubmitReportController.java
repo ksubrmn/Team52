@@ -14,7 +14,9 @@ import model.WaterType;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collections;
 
+@SuppressWarnings("ALL")
 public class SubmitReportController {
 
     private Main main;
@@ -48,17 +50,13 @@ public class SubmitReportController {
         this.main = main;
 
         ObservableList<WaterType> list = FXCollections.observableArrayList();
-        for (WaterType type: WaterType.values()) {
-            list.add(type);
-        }
+        Collections.addAll(list, WaterType.values());
         waterType.setItems(list);
         waterType.getSelectionModel().select(0);
 
 
         ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
-        for (WaterCondition type: WaterCondition.values()) {
-            list1.add(type);
-        }
+        Collections.addAll(list1, WaterCondition.values());
         waterCondition.setItems(list1);
         waterCondition.getSelectionModel().select(0);
     }

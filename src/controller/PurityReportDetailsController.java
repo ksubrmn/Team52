@@ -9,7 +9,7 @@ import model.WaterReportTracker;
 public class PurityReportDetailsController {
 
     @FXML
-    TextField dateField, timeField, latField, longField,
+    private TextField dateField, timeField, latField, longField,
             waterConditionField,virusField,contaminantField, reportNumberField, reporterField;
 
     private Main main;

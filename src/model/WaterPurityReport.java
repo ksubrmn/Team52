@@ -120,16 +120,17 @@ public class WaterPurityReport implements Serializable{
         return "#" + reportNumber + " by " + reporterName;
     }
 
+
     /**
      * Returns a HTML-friendly description of the data
      * @return The HTML description
      */
-    public String getDescription() {
-        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
-                + ", " + longitude + "<br>Condition: " + waterCondition
-                + "<br>Virus PPM: " + virusPPM + "  Contaminant PPM: " + contaminantPPM
-                + "<br>Created by " + reporterName + " on " + date;
-    }
+//    public String getDescription() {
+//        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
+//                + ", " + longitude + "<br>Condition: " + waterCondition
+//                + "<br>Virus PPM: " + virusPPM + "  Contaminant PPM: " + contaminantPPM
+//                + "<br>Created by " + reporterName + " on " + date;
+//    }
 
     /**
      * Gets the location name

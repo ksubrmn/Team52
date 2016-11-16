@@ -32,6 +32,7 @@ public class User implements Serializable {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
+    //Don't comment this out, needed for login
     public void saveTo(PrintWriter out) {
 
         out.println(username + "\t" + password + "\t" + email + "\t" + address + title + "\t" + "\t" + accountType);

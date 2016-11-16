@@ -10,13 +10,12 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubmitPurityReportController">
-   <children>
       <Text layoutX="143.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Purity Report">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button fx:id="SubmitReportButton" layoutX="66.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleSubmitButton" text="Submit" />
+      <Button layoutX="66.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleSubmitButton" text="Submit" />
       <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleCancelButton" text="Cancel" />
       <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
@@ -36,5 +35,4 @@
       <TextField fx:id="virusField" layoutX="300.0" layoutY="266.0" />
       <Label layoutX="137.0" layoutY="83.0" text="Location Name" />
       <TextField fx:id="LocationName" layoutX="300.0" layoutY="79.0" />
-   </children>
 </AnchorPane>

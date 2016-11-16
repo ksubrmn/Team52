@@ -2,24 +2,26 @@ package tests;
 
 import model.AccountTracker;
 import model.AccountType;
-import model.User;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by Kalya Subramanian on 11/14/16.
+ * Tests to check correctness of AccountTracker#addAccount
  */
 public class AccountTrackerTest {
-    @org.junit.Before
+    /**
+    @ Before
     public void setUp() throws Exception {
 
 
     }
 
-    @org.junit.After
+    @ After
     public void tearDown() throws Exception {
 
     }
+    */
 
     @org.junit.Test
     public void addAccount() throws Exception {

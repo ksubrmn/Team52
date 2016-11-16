@@ -9,12 +9,10 @@ import model.WaterSourceReport;
 public class ReportDetailsController {
 
     @FXML
-    TextField dateField, timeField, latField, longField,
+    private TextField dateField, timeField, latField, longField,
             waterTypeField, waterConditionField, reportNumberField, reporterField;
 
     private Main main;
-    private WaterReportTracker waterReportTracker;
-    private WaterSourceReport report;
 
     /**
      * Handles cancel button pressed event
@@ -29,9 +27,8 @@ public class ReportDetailsController {
      */
     public void setMainApp(Main main, WaterReportTracker waterReportTracker, int reportNumber) {
         this.main = main;
-        this.waterReportTracker = waterReportTracker;
         System.out.println("here");
-        this.report = this.waterReportTracker.getSourceReports().get(reportNumber -1);
+        WaterSourceReport report = waterReportTracker.getSourceReports().get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());

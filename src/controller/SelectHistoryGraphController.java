@@ -37,7 +37,7 @@ public class SelectHistoryGraphController {
                 if (virusButton.isSelected()) {
                     main.showViewHistoryGraphScreen(LocationBox.getText(), year, "virus");
                 } else if (contaminantButton.isSelected()) {
-                    main.showViewHistoryGraphScreen(LocationBox.getText(), year, "contam");
+                    main.showViewHistoryGraphScreen(LocationBox.getText(), year, "contaminant");
                 } else {
                     System.out.println("Error: Neither Virus nor Contaminant Radio Button selected");
                 }

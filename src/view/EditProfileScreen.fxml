@@ -7,7 +7,7 @@
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditProfileController">
-   <children>
+
       <Label layoutX="271.0" layoutY="46.0" text="Edit Profile" />
       <Label layoutX="115.0" layoutY="108.0" text="Email Address:" />
       <Label layoutX="113.0" layoutY="155.0" text="Street Address:" />
@@ -17,5 +17,5 @@
       <TextField fx:id="TitleBox" layoutX="225.0" layoutY="204.0" prefHeight="25.0" prefWidth="263.0" />
       <Button onAction="#handleSavePressed" layoutX="173.0" layoutY="321.0" mnemonicParsing="false" text="Save Profile" />
       <Button onAction="#handleCancelPressed" layoutX="329.0" layoutY="321.0" mnemonicParsing="false" text="Cancel" />
-   </children>
+
 </AnchorPane>

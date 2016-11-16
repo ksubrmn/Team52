@@ -54,7 +54,7 @@ public class Main extends Application {
      * Initialize home screen to welcome screen
      * @param mainScreen the main screen
      */
-    public void initHomeScreen(Stage mainScreen) {
+    private void initHomeScreen(Stage mainScreen) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("../view/WelcomeScreen.fxml"));

@@ -9,10 +9,11 @@ import java.util.ArrayList;
 
 /**
  * Created by kevin on 11/15/2016.
+ * Tests to check correctness of AccountTracker#checkAccount
  */
 public class CheckAccountTest {
 
-    AccountTracker tracker;
+    private AccountTracker tracker;
 
     @Before
     public void setUp() {

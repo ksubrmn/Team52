@@ -1,22 +1,14 @@
 package controller;
 
 import fxapp.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import model.AccountType;
 import model.WaterPurityReport;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +66,7 @@ public class ViewHistoryGraphController {
                     averagePPM.get(report.getDate().getMonthValue()).add(report.getVirusPPM());
                 }
             }
-        } else if (type.equals("contam")) {
+        } else if (type.equals("contaminant")) {
             for (WaterPurityReport report : main.getWaterReportTracker().getPurityReports()) {
                 if (report.getLocation().equals(location) && report.getDate().getYear() == year) {
                     averagePPM.get(report.getDate().getMonthValue()).add(report.getContaminantPPM());

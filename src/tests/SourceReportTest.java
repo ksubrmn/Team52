@@ -9,19 +9,21 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Helen Stallworth on 11/15/2016.
+ * Tests to check correctness of WaterReportTracker#addSourceReport
  */
 public class SourceReportTest {
 
-    @org.junit.Before
+    /**
+    @ org.junit.Before
     public void setUp() throws Exception {
 
 
-    }
+    } */
 
     @org.junit.Test
     public void addAccount() throws Exception {
         WaterReportTracker tracker = new WaterReportTracker();
-        LocalDate date = null;
+        LocalDate date = LocalDate.now();
 
         assertTrue(tracker.addSourceReport(date, "12:00", 10, 16, "Username",
                 WaterType.Bottled, WaterCondition.Potable));
@@ -30,9 +32,10 @@ public class SourceReportTest {
 
     }
 
+    /**
     @org.junit.After
     public void tearDown() throws Exception {
 
     }
-
+    */
 }

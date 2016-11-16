@@ -9,7 +9,7 @@ import model.AccountType;
 
 public class ApplicationController {
 
-    Main main;
+    private Main main;
 
     @FXML
     Button LogoutButton;

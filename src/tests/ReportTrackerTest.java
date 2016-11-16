@@ -10,6 +10,7 @@ import model.WaterReportTracker;
 
 /**
  * Created by Christina Chung on 11/15/16.
+ * Tests to check correctness of PurityReport creation
  */
 public class ReportTrackerTest {
 
@@ -17,7 +18,7 @@ public class ReportTrackerTest {
     public void testPurityReport() throws Exception {
 
         WaterReportTracker w = new WaterReportTracker();
-        LocalDate date = null;
+        LocalDate date = LocalDate.now();
         String time = "10:20";
         String username = "user";
         float latitude = (float) 34.4;

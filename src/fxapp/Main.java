@@ -3,7 +3,6 @@ import java.util.List;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import controller.ApplicationController;
 import controller.CreateAccountController;
 import controller.EditProfileController;

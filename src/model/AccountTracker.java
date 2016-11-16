@@ -14,9 +14,19 @@ public class AccountTracker implements Serializable {
     public AccountTracker() {
         accounts = new ArrayList<>();
     }
+
+    /**
+     * Initializes the list to an existing one
+     * @param accounts A List of registered users
+     */
     public void setList(List<User> accounts) {
         this.accounts = accounts;
     }
+
+    /**
+     * Gets the list of currently registered users
+     * @return The list of currently registered users
+     */
     public List<User> getAccounts(){
         return accounts;
     }

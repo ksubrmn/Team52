@@ -85,6 +85,9 @@ public class ApplicationController {
         main.showMapScreen();
     }
 
+    /**
+     * Listens for History Report Button, and chances screen accordingly
+     */
     public void HandleHistoryReportButton() {
         if ( main.getUser().getAccountType() == AccountType.Manager) {
             main.showSelectHistoryGraphScreen();

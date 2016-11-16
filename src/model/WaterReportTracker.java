@@ -9,10 +9,18 @@ public class WaterReportTracker implements Serializable {
     private  List<WaterSourceReport> sourceReports;
     private  List<WaterPurityReport> purityReports;
 
+    /**
+     * Sets the list of source reports to an existing list
+     * @param sourceReports An existing list of sourceReports
+     */
     public void setSourceReports(List<WaterSourceReport> sourceReports) {
         this.sourceReports = sourceReports;
     }
 
+    /**
+     * Sets the list of purity reports to an existing list
+     * @param purityReports An existing list of purityReports
+     */
     public void setPurityReports(List<WaterPurityReport> purityReports) {
         this.purityReports = purityReports;
     }

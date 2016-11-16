@@ -32,6 +32,10 @@ public class User implements Serializable {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
+    /**
+     * Saves this account's information to a new line
+     * @param out The Writer to write the account information to
+     */
     //Don't comment this out, needed for login
     public void saveTo(PrintWriter out) {
 

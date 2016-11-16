@@ -6,6 +6,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.User;
 
+/**
+ * Handles the Screen that allows uses to edit their profile
+ */
 public class EditProfileController {
 
     @FXML
@@ -18,8 +21,8 @@ public class EditProfileController {
      * Handles save button press event
      */
     public void handleSavePressed() {
-        if (EmailBox.getText().equals("") || AddressBox.getText().equals("")
-                || TitleBox.getText().equals("")) {
+        if ("".equals(EmailBox.getText()) || "".equals(AddressBox.getText())
+                || "".equals(TitleBox.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error saving account information");

@@ -6,8 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import model.*;
-
+import model.WaterReportTracker;
+import model.WaterSourceReport;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.List;

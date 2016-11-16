@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Tracks the accounts
+ */
 public class AccountTracker implements Serializable {
 
     private  List<User> accounts;
@@ -38,7 +41,8 @@ public class AccountTracker implements Serializable {
      * @param accountType Account type
      * @return true if account is added
      */
-    public boolean addAccount(String username, String password, AccountType accountType) {
+    public boolean addAccount(String username, String password,
+                              AccountType accountType) {
         for (User account: accounts) {
             if (account.getUsername().equals(username)) {
                 return false;
@@ -56,7 +60,8 @@ public class AccountTracker implements Serializable {
      */
     public boolean checkAccount(String username, String password) {
         for (User account: accounts) {
-            if (account.getUsername().equals(username) && account.getPassword().equals(password)) {
+            if (account.getUsername().equals(username) && account.getPassword()
+                    .equals(password)) {
                 return true;
             }
         }

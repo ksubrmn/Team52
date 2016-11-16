@@ -1,9 +1,9 @@
 package tests;
 
-import model.*;
-
+import model.WaterCondition;
+import model.WaterReportTracker;
+import model.WaterType;
 import java.time.LocalDate;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

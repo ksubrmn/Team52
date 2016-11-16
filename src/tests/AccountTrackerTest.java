@@ -24,7 +24,7 @@ public class AccountTrackerTest {
     */
 
     @org.junit.Test
-    public void addAccount() throws Exception {
+    public void addAccount() {
         AccountTracker at = new AccountTracker();
 
         assertTrue(at.addAccount("User", "Password", AccountType.User));

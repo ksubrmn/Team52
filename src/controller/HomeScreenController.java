@@ -4,6 +4,9 @@ import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+/**
+ * Handles the Main Logged In Screen
+ */
 public class HomeScreenController {
 
     @FXML

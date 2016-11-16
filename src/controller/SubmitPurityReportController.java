@@ -12,9 +12,13 @@ import javafx.scene.control.TextField;
 import model.WaterCondition;
 
 import java.io.FileOutputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.Collections;
 
+/**
+ * Screen for submitting a new report
+ */
 public class SubmitPurityReportController {
 
     private Main main;
@@ -56,7 +60,8 @@ public class SubmitPurityReportController {
     public void setMainApp(Main main) {
         this.main = main;
 
-        ObservableList<WaterCondition> list1 = FXCollections.observableArrayList();
+        ObservableList<WaterCondition> list1
+                = FXCollections.observableArrayList();
         Collections.addAll(list1, WaterCondition.values());
 
         waterCondition.setItems(list1);
@@ -81,22 +86,26 @@ public class SubmitPurityReportController {
             float longitude = Float.parseFloat(longField.getText());
             float virus = Float.parseFloat(virusField.getText());
             float con = Float.parseFloat(contaminantField.getText());
-            if (main.getWaterReportTracker().addPurityReport(dateField.getValue(),
-                    timeField.getText(),
+            if (main.getWaterReportTracker().addPurityReport(
+                    dateField.getValue(), timeField.getText(),
                     main.getUser().getUsername(), latitude, longitude,
-                    (WaterCondition) waterCondition.getSelectionModel().getSelectedItem(),
+                    (WaterCondition) waterCondition.getSelectionModel()
+                            .getSelectedItem(),
                     virus, con, LocationName.getText())) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Water Purity Report Created");
                 alert.setHeaderText("Purity Report created");
-                alert.setContentText("Water Purity Report #" + main.getWaterReportTracker().purityReportSize()
+                alert.setContentText("Water Purity Report #"
+                        + main.getWaterReportTracker().purityReportSize()
                         + " created by " + main.getUser().getUsername());
                 alert.showAndWait();
                 try
                 {
-                    final FileOutputStream fo = new FileOutputStream("purityreports.out");
-                    final ObjectOutputStream oos = new ObjectOutputStream(fo);
-                    oos.writeObject(main.getWaterReportTracker().getPurityReports());
+                    final FileOutputStream fo
+                            = new FileOutputStream("purityreports.out");
+                    final ObjectOutput oos = new ObjectOutputStream(fo);
+                    oos.writeObject(main.getWaterReportTracker()
+                            .getPurityReports());
                     oos.flush();
                     oos.close();
 

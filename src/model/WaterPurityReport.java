@@ -3,6 +3,9 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/**
+ * Represents a Water Purity Report
+ */
 public class WaterPurityReport implements Serializable{
 
     private final LocalDate date;
@@ -98,9 +101,11 @@ public class WaterPurityReport implements Serializable{
      * @param virusPPM the virus count in parts per million at the source
      * @param contaminantPPM the contaminant count in parts per million at the
      *                       source
+     * @param location Where it happened
      */
     public WaterPurityReport(LocalDate date, String time, int reportNumber,
-                             String reporterName, float latitude, float longitude,
+                             String reporterName, float latitude,
+                             float longitude,
                              WaterCondition waterCondition, float virusPPM,
                              float contaminantPPM, String location) {
         this.date = date;
@@ -128,7 +133,8 @@ public class WaterPurityReport implements Serializable{
 //    public String getDescription() {
 //        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
 //                + ", " + longitude + "<br>Condition: " + waterCondition
-//                + "<br>Virus PPM: " + virusPPM + "  Contaminant PPM: " + contaminantPPM
+//                + "<br>Virus PPM: " + virusPPM + "  Contaminant PPM: "
+// + contaminantPPM
 //                + "<br>Created by " + reporterName + " on " + date;
 //    }
 

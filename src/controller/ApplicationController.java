@@ -7,6 +7,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import model.AccountType;
 
+/**
+ * Handles the Main Application Screen
+ */
 public class ApplicationController {
 
     private Main main;
@@ -44,13 +47,15 @@ public class ApplicationController {
      * Handles submit purity report action
      */
     public void HandleSubmitPurityReportButton() {
-        if (main.getUser().getAccountType() == AccountType.Worker || main.getUser().getAccountType() == AccountType.Manager){
+        if ((main.getUser().getAccountType() == AccountType.Worker) ||
+                (main.getUser().getAccountType() == AccountType.Manager)){
             main.showSubmitPurityReportScreen();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Access Denied");
             alert.setHeaderText("Access Denied");
-            alert.setContentText("Only Workers and Managers can create Water Purity Reports.");
+            alert.setContentText("Only Workers and Managers " +
+                    "can create Water Purity Reports.");
             alert.showAndWait();
         }
 
@@ -73,7 +78,8 @@ public class ApplicationController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Access Denied");
             alert.setHeaderText("Access Denied");
-            alert.setContentText("Only Managers can view Water Purity Reports.");
+            alert.setContentText(
+                    "Only Managers can view Water Purity Reports.");
             alert.showAndWait();
         }
     }

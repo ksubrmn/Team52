@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
+/**
+ * Allows user to select what to show
+ */
 public class SelectHistoryGraphController {
 
     private Main main;
@@ -30,17 +33,22 @@ public class SelectHistoryGraphController {
      * Handles submit button pressed event
      */
     public void handleSubmitPressed() {
-        if (LocationBox.getText() != null && !LocationBox.getText().equals("")
-                && YearBox.getText() != null && !YearBox.getText().equals("")) {
+        if ((LocationBox.getText() != null)
+                && (!"".equals(LocationBox.getText()))
+                && (YearBox.getText() != null)
+                && (!"".equals(YearBox.getText()))) {
             try {
                 int year = Integer.parseInt(YearBox.getText());
                 if (virusButton.isSelected()) {
-                    main.showViewHistoryGraphScreen(LocationBox.getText(), year, "virus");
+                    main.showViewHistoryGraphScreen(LocationBox.getText(), year,
+                            "virus");
                 } else if (contaminantButton.isSelected()) {
-                    main.showViewHistoryGraphScreen(LocationBox.getText(), year, "contaminant");
-                } else {
-                    System.out.println("Error: Neither Virus nor Contaminant Radio Button selected");
-                }
+                    main.showViewHistoryGraphScreen(LocationBox.getText(), year,
+                            "contaminant");
+                } //else {
+                    //System.out.println("Error: Neither Virus nor"
+                    // +  "Contaminant Radio Button selected");
+                //}
             } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");

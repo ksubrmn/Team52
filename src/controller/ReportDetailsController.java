@@ -6,11 +6,15 @@ import javafx.scene.control.TextField;
 import model.WaterReportTracker;
 import model.WaterSourceReport;
 
+/**
+ * Handles the Screen with the Report Details on it
+ */
 public class ReportDetailsController {
 
     @FXML
     private TextField dateField, timeField, latField, longField,
-            waterTypeField, waterConditionField, reportNumberField, reporterField;
+            waterTypeField, waterConditionField, reportNumberField,
+            reporterField;
 
     private Main main;
 
@@ -24,11 +28,14 @@ public class ReportDetailsController {
     /**
      * Sets main app state for a given user
      * @param main The facade
+     * @param reportNumber Which report to show
+     * @param waterReportTracker Where to pull from
      */
-    public void setMainApp(Main main, WaterReportTracker waterReportTracker, int reportNumber) {
+    public void setMainApp(Main main, WaterReportTracker waterReportTracker,
+                           int reportNumber) {
         this.main = main;
-        System.out.println("here");
-        WaterSourceReport report = waterReportTracker.getSourceReports().get(reportNumber -1);
+        WaterSourceReport report = waterReportTracker.getSourceReports()
+                .get(reportNumber -1);
 
         reportNumberField.setText("" + reportNumber);
         reporterField.setText(report.getReporterName());

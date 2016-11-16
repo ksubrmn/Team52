@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a tracker
+ */
 public class WaterReportTracker implements Serializable {
     private  List<WaterSourceReport> sourceReports;
     private  List<WaterPurityReport> purityReports;
@@ -48,10 +51,11 @@ public class WaterReportTracker implements Serializable {
      */
     public boolean addSourceReport(LocalDate date, String time, float latitude,
                                    float longitude, String username,
-                                   WaterType waterType, WaterCondition waterCondition) {
+                                   WaterType waterType,
+                                   WaterCondition waterCondition) {
         WaterSourceReport newReport = new WaterSourceReport(date, time,
-                sourceReports.size() +1, username, latitude, longitude, waterType,
-                waterCondition );
+                sourceReports.size() +1, username, latitude, longitude,
+                waterType, waterCondition );
         return sourceReports.add(newReport);
     }
 
@@ -99,12 +103,14 @@ public class WaterReportTracker implements Serializable {
      * @param virusPPM the virus level in parts per million at the source
      * @param contaminantPPM the contaminant level in parts per million at the
      *                       source
+     * @param location Where it happened
      * @return true if the report was added successfully
      */
     public boolean addPurityReport(LocalDate date, String time, String username,
                                    float latitude, float longitude,
-                                   WaterCondition waterCondition, float virusPPM,
-                                   float contaminantPPM, String location) {
+                                   WaterCondition waterCondition,
+                                   float virusPPM, float contaminantPPM,
+                                   String location) {
         WaterPurityReport newReport = new WaterPurityReport(date, time,
                 purityReports.size() + 1, username, latitude, longitude,
                 waterCondition, virusPPM, contaminantPPM, location);

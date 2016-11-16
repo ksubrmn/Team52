@@ -3,6 +3,9 @@ package model;
 import java.io.PrintWriter;
 import java.io.Serializable;
 
+/**
+ * Represents a User
+ */
 public class User implements Serializable {
 
     private final String username;
@@ -21,7 +24,8 @@ public class User implements Serializable {
     //public void setPassword(String pass) { password = pass; }
 
     public AccountType getAccountType() { return accountType; }
-    //public void setAccountType(AccountType accountType) { this.accountType = accountType; }
+    //public void setAccountType(AccountType accountType) {
+    // this.accountType = accountType; }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
@@ -39,7 +43,8 @@ public class User implements Serializable {
     //Don't comment this out, needed for login
     public void saveTo(PrintWriter out) {
 
-        out.println(username + "\t" + password + "\t" + email + "\t" + address + title + "\t" + "\t" + accountType);
+        out.println(username + "\t" + password + "\t" + email + "\t" + address
+                + title + "\t" + "\t" + accountType);
 
     }
 

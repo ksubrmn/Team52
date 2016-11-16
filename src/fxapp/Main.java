@@ -23,8 +23,16 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.*;
+import model.AccountTracker;
+import model.AccountType;
+import model.User;
+import model.WaterPurityReport;
+import model.WaterReportTracker;
+import model.WaterSourceReport;
 
+/**
+ * Handles main program logic including switching screens
+ */
 public class Main extends Application {
 
     private BorderPane rootLayout;
@@ -38,7 +46,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
+//        Parent root = FXMLLoader.load(getClass()
+// .getResource("../view/WelcomeScreen.fxml"));
 //        primaryStage.setTitle("Team 52");
 //        primaryStage.setScene(new Scene(root, 300, 275));
 //        primaryStage.show();
@@ -56,7 +65,8 @@ public class Main extends Application {
     private void initHomeScreen(Stage mainScreen) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/WelcomeScreen.fxml"));
+            loader.setLocation(Main.class
+                    .getResource("../view/WelcomeScreen.fxml"));
             rootLayout = loader.load();
             HomeScreenController controller = loader.getController();
             controller.setMainApp(this);
@@ -65,7 +75,8 @@ public class Main extends Application {
             mainScreen.setScene(scene);
             mainScreen.show();
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Home screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Home screen. fxml not loaded?");
         }
     }
 
@@ -75,7 +86,8 @@ public class Main extends Application {
     public void showLoginScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/LoginDialog.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/LoginDialog.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             rootLayout.setBottom(null);
@@ -83,7 +95,8 @@ public class Main extends Application {
             LoginScreenController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Login screen. Fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Login screen. Fxml not loaded?");
         }
     }
 
@@ -93,7 +106,8 @@ public class Main extends Application {
     public void showApplicationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ApplicationScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/ApplicationScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             rootLayout.setBottom(null);
@@ -101,7 +115,8 @@ public class Main extends Application {
             ApplicationController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Application screen. Fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Application screen. Fxml not loaded?");
         }
     }
 
@@ -111,13 +126,15 @@ public class Main extends Application {
     public void showHomeScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/WelcomeScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/WelcomeScreen.fxml"));
             BorderPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             HomeScreenController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Home screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Home screen. fxml not loaded?");
         }
     }
 
@@ -127,7 +144,8 @@ public class Main extends Application {
     public void showCreateAccountScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/CreateAccount.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/CreateAccount.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             rootLayout.setBottom(null);
@@ -135,7 +153,8 @@ public class Main extends Application {
             CreateAccountController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Account Creation screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Account Creation screen. fxml not loaded?");
         }
     }
 
@@ -145,13 +164,15 @@ public class Main extends Application {
     public void showEditInformationScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/EditProfileScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/EditProfileScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             EditProfileController controller = loader.getController();
             controller.setMainApp(this, user);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Account Creation screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Account Creation screen. fxml not loaded?");
         }
     }
 
@@ -161,13 +182,16 @@ public class Main extends Application {
     public void showSubmitReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/SubmitReportScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/SubmitReportScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitReportController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Submit Water Report screen. " +
+                            "fxml not loaded?");
         }
     }
 
@@ -177,13 +201,15 @@ public class Main extends Application {
     public void showViewReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ViewReportScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/ViewReportScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewReportController controller = loader.getController();
             controller.setMainApp(this, waterReportTracker);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init View Report screen. fxml not loaded?");
         }
     }
 
@@ -194,13 +220,15 @@ public class Main extends Application {
     public void showReportDetailsScreen(int reportNumber) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ReportDetailsScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/ReportDetailsScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ReportDetailsController controller = loader.getController();
             controller.setMainApp(this, waterReportTracker, reportNumber);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init View Report screen. fxml not loaded?");
         }
     }
 
@@ -210,13 +238,15 @@ public class Main extends Application {
     public void showMapScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/MapViewScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/MapViewScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             MapScreenController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Map screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init View Map screen. fxml not loaded?");
         }
     }
 /*
@@ -227,13 +257,15 @@ public class Main extends Application {
     public void showSelectReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/SelectReportScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+            "../view/SelectReportScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SelectReportController controller = loader.getController();
             controller.setMainApp(this, user, waterReportTracker);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+            "Failed to init Select Report screen. fxml not loaded?");
         }
     }
 */
@@ -246,13 +278,16 @@ public class Main extends Application {
     public void showSubmitPurityReportScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/SubmitPurityReportScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/SubmitPurityReportScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SubmitPurityReportController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Submit Water Purity Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Submit Water Purity Report screen. " +
+                            "fxml not loaded?");
         }
     }
 
@@ -265,13 +300,16 @@ public class Main extends Application {
     public void showViewPurityReportsScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ViewPurityReportsScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/ViewPurityReportsScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewPurityReportsController controller = loader.getController();
             controller.setMainApp(this, waterReportTracker);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Purity Reports screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init View Purity Reports screen. " +
+                            "fxml not loaded?");
         }
     }
 
@@ -283,13 +321,16 @@ public class Main extends Application {
     public void showPurityReportDetailsScreen(int reportNumber) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/PurityReportDetailsScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/PurityReportDetailsScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             PurityReportDetailsController controller = loader.getController();
             controller.setMainApp(this, waterReportTracker, reportNumber);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init View Purity Report screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init View Purity Report screen. " +
+                            "fxml not loaded?");
         }
     }
 
@@ -299,29 +340,38 @@ public class Main extends Application {
     public void showSelectHistoryGraphScreen() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/SelectHistoryGraphScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/SelectHistoryGraphScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             SelectHistoryGraphController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select History Graph screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Select History Graph screen. " +
+                            "fxml not loaded?");
         }
     }
 
     /**
      * Changes display to show information about a particular purity report
+     * @param location The desired location
+     * @param type The type of graph to show
+     * @param year What year to show graph from
      */
     public void showViewHistoryGraphScreen(String location, int year, String type) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ViewHistoryGraphScreen.fxml"));
+            loader.setLocation(Main.class.getResource(
+                    "../view/ViewHistoryGraphScreen.fxml"));
             AnchorPane loginScreen = loader.load();
             rootLayout.setCenter(loginScreen);
             ViewHistoryGraphController controller = loader.getController();
             controller.setMainApp(this, location, year, type);
         } catch (IOException e) {
-            Logger.getLogger("Main").log(Level.SEVERE, "Failed to init Select History Graph screen. fxml not loaded?");
+            Logger.getLogger("Main").log(Level.SEVERE,
+                    "Failed to init Select History Graph screen. " +
+                            "fxml not loaded?");
         }
     }
 
@@ -332,14 +382,27 @@ public class Main extends Application {
     public AccountTracker getAccountTracker() {
         return accountTracker;
     }
+
+    /**
+     * Initializes the Account Tracker
+     * @param l The Account Tracker
+     */
     public void setAccountTracker(List<User> l) {
         accountTracker.setList(l);
     }
 
+    /**
+     * Initializes the Purity Reports
+     * @param l The Report Tracker
+     */
     public void setPurityReports(List<WaterPurityReport> l) {
         waterReportTracker.setPurityReports(l);
     }
 
+    /**
+     * Initializes the list of Source Reports
+     * @param l The Source Reports
+     */
     public void setSourceReports(List<WaterSourceReport> l) {
         waterReportTracker.setSourceReports(l);
     }

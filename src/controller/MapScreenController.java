@@ -21,7 +21,11 @@ import javafx.fxml.Initializable;
 import model.WaterSourceReport;
 import netscape.javascript.JSObject;
 
-public class MapScreenController implements Initializable, MapComponentInitializedListener {
+/**
+ * Represents the screen with a map on it
+ */
+public class MapScreenController implements Initializable,
+        MapComponentInitializedListener {
 
     private Main main;
     private GoogleMap map;
@@ -59,9 +63,11 @@ public class MapScreenController implements Initializable, MapComponentInitializ
                 .zoomControl(false)
                 .mapType(MapTypeIdEnum.TERRAIN);
         map = mapView.createMap(options);
-        for (WaterSourceReport report: main.getWaterReportTracker().getSourceReports()) {
+        for (WaterSourceReport report: main.getWaterReportTracker()
+                .getSourceReports()) {
             MarkerOptions markerOptions = new MarkerOptions();
-            LatLong loc = new LatLong(report.getLatitude(), report.getLongitude());
+            LatLong loc = new LatLong(report.getLatitude(),
+                    report.getLongitude());
             markerOptions.position(loc)
                     .visible(Boolean.TRUE)
                     .title("Report: " + report.getReportNumber());
@@ -69,7 +75,8 @@ public class MapScreenController implements Initializable, MapComponentInitializ
             map.addUIEventHandler(marker,
                     UIEventType.click,
                     (JSObject obj) -> {
-                        InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
+                        InfoWindowOptions infoWindowOptions
+                                = new InfoWindowOptions();
                         infoWindowOptions.content(report.getDescription());
                         InfoWindow window = new InfoWindow(infoWindowOptions);
                         window.open(map, marker);

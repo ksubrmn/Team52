@@ -3,6 +3,9 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/**
+ * Represents a water source report
+ */
 public class WaterSourceReport implements Serializable{
     private final LocalDate date;
     private final String time;
@@ -23,11 +26,13 @@ public class WaterSourceReport implements Serializable{
 
     public int getReportNumber() { return reportNumber; }
 
-    //public void setReportNumber(int reportNumber) { this.reportNumber = reportNumber; }
+    //public void setReportNumber(int reportNumber) {
+    // this.reportNumber = reportNumber; }
 
     public String getReporterName() { return reporterName; }
 
-    //public void setReporterName(String reporterName) { this.reporterName = reporterName; }
+    //public void setReporterName(String reporterName) {
+    // this.reporterName = reporterName; }
 
     public float getLatitude() {
         return latitude;
@@ -46,10 +51,12 @@ public class WaterSourceReport implements Serializable{
     }*/
 
     public WaterType getWaterType() { return waterType; }
-    //public void setWaterType(WaterType accountType) { this.waterType = waterType; }
+    //public void setWaterType(WaterType accountType) {
+    // this.waterType = waterType; }
 
     public WaterCondition getWaterCondition() { return waterCondition; }
-    //public void setWaterCondition(WaterCondition waterCondition) { this.waterCondition = waterCondition; }
+    //public void setWaterCondition(WaterCondition waterCondition) {
+    // this.waterCondition = waterCondition; }
 
     /**
      * Creates new Water Source Report
@@ -64,8 +71,9 @@ public class WaterSourceReport implements Serializable{
      * @param waterCondition the condition of the water at the location
      */
     public WaterSourceReport(LocalDate date, String time, int reportNumber,
-                             String reporterName, float latitude, float longitude,
-                             WaterType waterType, WaterCondition waterCondition) {
+                             String reporterName, float latitude,
+                             float longitude, WaterType waterType,
+                             WaterCondition waterCondition) {
         this.date = date;
         this.time = time;
         this.reportNumber = reportNumber;
@@ -87,7 +95,8 @@ public class WaterSourceReport implements Serializable{
      */
     public String getDescription() {
         return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
-                + ", " + longitude + "<br>Type: " + waterType + "<br>Condition: "
-                + waterCondition + "<br>Created by " + reporterName + " on " + date;
+                + ", " + longitude + "<br>Type: " + waterType
+                + "<br>Condition: " + waterCondition + "<br>Created by "
+                + reporterName + " on " + date;
     }
 }

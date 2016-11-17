@@ -9,13 +9,22 @@ import java.time.LocalDate;
 public class WaterPurityReport implements Serializable{
 
     private final LocalDate date;
-    private final String time, reporterName, location;
-    private final float latitude, longitude, virusPPM, contaminantPPM;
+    private final String time;
+    private final String reporterName;
+    private final String location;
+    private final float latitude;
+    private final float longitude;
+    private final float virusPPM;
+    private final float contaminantPPM;
     private final int reportNumber;
     private final WaterCondition waterCondition;
 
     //Getters and setter for properties
 
+    /**
+     * Returns the date
+     * @return the date
+     */
     public LocalDate getDate() {
         return date;
     }
@@ -24,6 +33,10 @@ public class WaterPurityReport implements Serializable{
         this.date = date;
     }*/
 
+    /**
+     * Returns the reporter name
+     * @return the reporter name
+     */
     public String getReporterName() {
         return reporterName;
     }
@@ -32,6 +45,10 @@ public class WaterPurityReport implements Serializable{
         this.reporterName = reporterName;
     }*/
 
+    /**
+     * Returns the latitude
+     * @return the latitude
+     */
     public float getLatitude() {
         return latitude;
     }
@@ -40,6 +57,10 @@ public class WaterPurityReport implements Serializable{
         this.latitude = latitude;
     }*/
 
+    /**
+     * Returns the longitude
+     * @return the longitude
+     */
     public float getLongitude() {
         return longitude;
     }
@@ -48,6 +69,10 @@ public class WaterPurityReport implements Serializable{
         this.longitude = longitude;
     }*/
 
+    /**
+     * Returns the report number
+     * @return the report number
+     */
     public int getReportNumber() {
         return reportNumber;
     }
@@ -56,6 +81,10 @@ public class WaterPurityReport implements Serializable{
         this.reportNumber = reportNumber;
     }*/
 
+    /**
+     * Returns the virus PPM
+     * @return the virus PPM
+     */
     public float getVirusPPM() {
         return virusPPM;
     }
@@ -64,6 +93,10 @@ public class WaterPurityReport implements Serializable{
         this.virusPPM = virusPPM;
     }*/
 
+    /**
+     * Returns the contaminant PPM
+     * @return the contaminant PPM
+     */
     public float getContaminantPPM() {
         return contaminantPPM;
     }
@@ -72,6 +105,10 @@ public class WaterPurityReport implements Serializable{
         this.contaminantPPM = contaminantPPM;
     }*/
 
+    /**
+     * Returns the water condition
+     * @return the water condition
+     */
     public WaterCondition getWaterCondition() {
         return waterCondition;
     }
@@ -80,6 +117,10 @@ public class WaterPurityReport implements Serializable{
         this.waterCondition = waterCondition;
     }*/
 
+    /**
+     * Returns the time
+     * @return the time
+     */
     public String getTime() {
         return time;
     }

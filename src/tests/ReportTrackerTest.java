@@ -14,6 +14,10 @@ import model.WaterReportTracker;
  */
 public class ReportTrackerTest {
 
+    /**
+     * Tests the purity report
+     * @throws Exception any exception generated
+     */
     @org.junit.Test
     public void testPurityReport() throws Exception {
 
@@ -30,13 +34,15 @@ public class ReportTrackerTest {
 
 
         assertTrue(w.addPurityReport(date, time, username, latitude,
-                longitude, WaterCondition.TreatableClear, virusPPM, contaminantPPM, location));
+                longitude, WaterCondition.TreatableClear, virusPPM,
+                contaminantPPM, location));
 
         assertEquals(w.purityReportSize(), 1);
         assertEquals(w.sourceReportSize(), 0);
 
         assertTrue(w.addPurityReport(date, time, username, latitude,
-                longitude, WaterCondition.TreatableClear, virusPPM, contaminantPPM, location));
+                longitude, WaterCondition.TreatableClear, virusPPM,
+                contaminantPPM, location));
 
         assertEquals(w.purityReportSize(), 2);
         assertEquals(w.sourceReportSize(), 0);

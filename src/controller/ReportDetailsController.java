@@ -12,9 +12,28 @@ import model.WaterSourceReport;
 public class ReportDetailsController {
 
     @FXML
-    private TextField dateField, timeField, latField, longField,
-            waterTypeField, waterConditionField, reportNumberField,
-            reporterField;
+    private TextField dateField;
+
+    @FXML
+    private TextField timeField;
+
+    @FXML
+    private TextField latField;
+
+    @FXML
+    private TextField longField;
+
+    @FXML
+    private TextField waterTypeField;
+
+    @FXML
+    private TextField waterConditionField;
+
+    @FXML
+    private TextField reportNumberField;
+
+    @FXML
+    private TextField reporterField;
 
     private Main main;
 

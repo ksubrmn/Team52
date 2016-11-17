@@ -21,7 +21,7 @@ public class SourceReportTest {
     } */
 
     @org.junit.Test
-    public void addAccount() throws Exception {
+    public void addAccount() {
         WaterReportTracker tracker = new WaterReportTracker();
         LocalDate date = LocalDate.now();
 

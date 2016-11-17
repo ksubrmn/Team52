@@ -12,9 +12,31 @@ import model.WaterReportTracker;
 public class PurityReportDetailsController {
 
     @FXML
-    private TextField dateField, timeField, latField, longField,
-            waterConditionField,virusField,contaminantField, reportNumberField,
-            reporterField;
+    private TextField dateField;
+
+    @FXML
+    private TextField timeField;
+
+    @FXML
+    private TextField latField;
+
+    @FXML
+    private TextField longField;
+
+    @FXML
+    private TextField waterConditionField;
+
+    @FXML
+    private TextField virusField;
+
+    @FXML
+    private TextField contaminantField;
+
+    @FXML
+    private TextField reportNumberField;
+
+    @FXML
+    private TextField reporterField;
 
     private Main main;
     //private WaterReportTracker waterReportTracker;

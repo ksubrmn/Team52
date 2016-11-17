@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -16,16 +17,18 @@ public class WaterReportTracker implements Serializable {
      * Sets the list of source reports to an existing list
      * @param sourceReports An existing list of sourceReports
      */
-    public void setSourceReports(List<WaterSourceReport> sourceReports) {
-        this.sourceReports = sourceReports;
+    public void setSourceReports(Collection<WaterSourceReport> sourceReports) {
+        this.sourceReports = new ArrayList<>();
+        this.sourceReports.addAll(sourceReports);
     }
 
     /**
      * Sets the list of purity reports to an existing list
      * @param purityReports An existing list of purityReports
      */
-    public void setPurityReports(List<WaterPurityReport> purityReports) {
-        this.purityReports = purityReports;
+    public void setPurityReports(Collection<WaterPurityReport> purityReports) {
+        this.purityReports = new ArrayList<>();
+        this.purityReports.addAll(purityReports);
     }
 
     /**

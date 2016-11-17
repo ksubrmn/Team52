@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 
 /**
  * Represents a water source report
@@ -11,33 +12,58 @@ public class WaterSourceReport implements Serializable{
     private final String time;
     private final int reportNumber;
     private final String reporterName;
-    private final float latitude, longitude;
+    private final float latitude;
+    private final float longitude;
     private final WaterType waterType;
     private final WaterCondition waterCondition;
 
 
     //Getters and setters for properties
 
-    public LocalDate getDate() {return date; }
+    /**
+     * Returns the date
+     * @return the date
+     */
+    public ChronoLocalDate getDate() {return date; }
     //public void setDate(LocalDate date) { this.date = date; }
 
+    /**
+     * Returns the time
+     * @return the time
+     */
     public String getTime() {return time; }
     //public void setTime(String time) { this.time = time; }
 
+    /**
+     * Returns the report number
+     * @return the report number
+     */
     public int getReportNumber() { return reportNumber; }
 
     //public void setReportNumber(int reportNumber) {
     // this.reportNumber = reportNumber; }
 
+    /**
+     * Returns the reporter name
+     * @return the reporter name
+     */
     public String getReporterName() { return reporterName; }
 
     //public void setReporterName(String reporterName) {
     // this.reporterName = reporterName; }
 
+    /**
+     * Returns the latitude
+     * @return the latitude
+     */
     public float getLatitude() {
         return latitude;
     }
 
+    /**
+     * Returns the longitude
+     * @return the longitude
+     */
     public float getLongitude() {
         return longitude;
     }
@@ -50,10 +76,18 @@ public class WaterSourceReport implements Serializable{
         this.longitude = longitude;
     }*/
 
+    /**
+     * Returns the water type
+     * @return the water type
+     */
     public WaterType getWaterType() { return waterType; }
     //public void setWaterType(WaterType accountType) {
     // this.waterType = waterType; }
 
+    /**
+     * Returns the water condition
+     * @return the water condition
+     */
     public WaterCondition getWaterCondition() { return waterCondition; }
     //public void setWaterCondition(WaterCondition waterCondition) {
     // this.waterCondition = waterCondition; }

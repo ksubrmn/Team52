@@ -6,7 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PurityReportDetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.101"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.PurityReportDetailsController">
 
       <Label layoutX="199.0" layoutY="40.0" text="Purity Report Details">
          <font>
@@ -15,21 +19,31 @@
       <Label layoutX="121.0" layoutY="143.0" text="Date:" />
       <Label layoutX="121.0" layoutY="180.0" text="Time:" />
       <Label layoutX="121.0" layoutY="217.0" text="Location:" />
-      <TextField fx:id="dateField" editable="false" layoutX="231.0" layoutY="139.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="timeField" editable="false" layoutX="233.0" layoutY="176.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="latField" editable="false" layoutX="262.0" layoutY="213.0" prefHeight="25.0" prefWidth="83.0" />
-      <Button layoutX="283.0" layoutY="353.0" mnemonicParsing="false" onAction="#HandleBackButtonPressed" text="Back" />
-      <TextField fx:id="waterConditionField" editable="false" layoutX="233.0" layoutY="252.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="dateField" editable="false" layoutX="231.0"
+                 layoutY="139.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="timeField" editable="false" layoutX="233.0"
+                 layoutY="176.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="latField" editable="false" layoutX="262.0"
+                 layoutY="213.0" prefHeight="25.0" prefWidth="83.0" />
+      <Button layoutX="283.0" layoutY="353.0" mnemonicParsing="false"
+              onAction="#HandleBackButtonPressed" text="Back" />
+      <TextField fx:id="waterConditionField" editable="false" layoutX="233.0"
+                 layoutY="252.0" prefHeight="25.0" prefWidth="263.0" />
       <Label layoutX="121.0" layoutY="256.0" text="Overall Condition:" />
       <Label layoutX="120.0" layoutY="105.0" text="Report #:" />
       <Label layoutX="309.0" layoutY="105.0" text="Reporter:" />
-      <TextField fx:id="reportNumberField" editable="false" layoutX="232.0" layoutY="100.0" prefHeight="26.0" prefWidth="49.0" />
-      <TextField fx:id="reporterField" editable="false" layoutX="383.0" layoutY="100.0" prefHeight="26.0" prefWidth="113.0" />
+      <TextField fx:id="reportNumberField" editable="false" layoutX="232.0"
+                 layoutY="100.0" prefHeight="26.0" prefWidth="49.0" />
+      <TextField fx:id="reporterField" editable="false" layoutX="383.0"
+                 layoutY="100.0" prefHeight="26.0" prefWidth="113.0" />
       <Label layoutX="232.0" layoutY="217.0" text="Lat." />
       <Label layoutX="363.0" layoutY="217.0" text="Long." />
-      <TextField fx:id="longField" layoutX="408.0" layoutY="213.0" prefHeight="25.0" prefWidth="90.0" />
-      <TextField fx:id="virusField" layoutX="235.0" layoutY="283.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="contaminantField" layoutX="235.0" layoutY="319.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="longField" layoutX="408.0" layoutY="213.0"
+                 prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="virusField" layoutX="235.0" layoutY="283.0"
+                 prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="contaminantField" layoutX="235.0" layoutY="319.0"
+                 prefHeight="25.0" prefWidth="263.0" />
       <Label layoutX="122.0" layoutY="287.0" text="Virus PPM" />
       <Label layoutX="121.0" layoutY="323.0" text="Contaminant PPM" />
 

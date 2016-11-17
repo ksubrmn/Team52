@@ -1,5 +1,5 @@
 package fxapp;
-import java.util.List;
+import java.util.Collection;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -359,7 +359,8 @@ public class Main extends Application {
      * @param type The type of graph to show
      * @param year What year to show graph from
      */
-    public void showViewHistoryGraphScreen(String location, int year, String type) {
+    public void showViewHistoryGraphScreen(String location, int year,
+                                           String type) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource(
@@ -387,7 +388,7 @@ public class Main extends Application {
      * Initializes the Account Tracker
      * @param l The Account Tracker
      */
-    public void setAccountTracker(List<User> l) {
+    public void setAccountTracker(Collection<User> l) {
         accountTracker.setList(l);
     }
 
@@ -395,7 +396,7 @@ public class Main extends Application {
      * Initializes the Purity Reports
      * @param l The Report Tracker
      */
-    public void setPurityReports(List<WaterPurityReport> l) {
+    public void setPurityReports(Collection<WaterPurityReport> l) {
         waterReportTracker.setPurityReports(l);
     }
 
@@ -403,7 +404,7 @@ public class Main extends Application {
      * Initializes the list of Source Reports
      * @param l The Source Reports
      */
-    public void setSourceReports(List<WaterSourceReport> l) {
+    public void setSourceReports(Collection<WaterSourceReport> l) {
         waterReportTracker.setSourceReports(l);
     }
 

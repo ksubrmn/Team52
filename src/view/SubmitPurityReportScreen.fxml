@@ -9,28 +9,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SubmitPurityReportController">
-      <Text layoutX="143.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit Purity Report">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.60"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.SubmitPurityReportController">
+      <Text layoutX="143.0" layoutY="53.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Submit Purity Report">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="66.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleSubmitButton" text="Submit" />
-      <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0" mnemonicParsing="false" onAction="#HandleCancelButton" text="Cancel" />
-      <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+      <Button layoutX="66.0" layoutY="343.0" mnemonicParsing="false"
+              onAction="#HandleSubmitButton" text="Submit" />
+      <Button fx:id="CancelReportButton" layoutX="462.0" layoutY="343.0"
+              mnemonicParsing="false" onAction="#HandleCancelButton"
+              text="Cancel" />
+      <Text layoutX="139.0" layoutY="137.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Date" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="140.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overall Condition" />
-      <Text layoutX="137.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virus PPM" />
-      <TextField fx:id="latField" layoutX="324.0" layoutY="193.0" prefHeight="25.0" prefWidth="61.0" />
-      <Text layoutX="141.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+      <Text layoutX="140.0" layoutY="249.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Overall Condition" />
+      <Text layoutX="137.0" layoutY="283.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Virus PPM" />
+      <TextField fx:id="latField" layoutX="324.0" layoutY="193.0"
+                 prefHeight="25.0" prefWidth="61.0" />
+      <Text layoutX="141.0" layoutY="210.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Location" />
       <TextField fx:id="timeField" layoutX="299.0" layoutY="156.0" />
-      <Text layoutX="138.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-      <ComboBox fx:id="waterCondition" layoutX="299.0" layoutY="232.0" prefWidth="150.0" />
-      <DatePicker fx:id="dateField" layoutX="300.0" layoutY="119.0" prefHeight="26.0" prefWidth="188.0" />
+      <Text layoutX="138.0" layoutY="173.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Time" />
+      <ComboBox fx:id="waterCondition" layoutX="299.0" layoutY="232.0"
+                prefWidth="150.0" />
+      <DatePicker fx:id="dateField" layoutX="300.0" layoutY="119.0"
+                  prefHeight="26.0" prefWidth="188.0" />
       <Label layoutX="299.0" layoutY="197.0" text="Lat." />
       <Label layoutX="408.0" layoutY="197.0" text="Long." />
-      <TextField fx:id="longField" layoutX="444.0" layoutY="193.0" prefHeight="25.0" prefWidth="61.0" />
-      <Text layoutX="130.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contaminant PPM" />
+      <TextField fx:id="longField" layoutX="444.0" layoutY="193.0"
+                 prefHeight="25.0" prefWidth="61.0" />
+      <Text layoutX="130.0" layoutY="312.0" strokeType="OUTSIDE"
+            strokeWidth="0.0" text="Contaminant PPM" />
       <TextField fx:id="contaminantField" layoutX="299.0" layoutY="295.0" />
       <TextField fx:id="virusField" layoutX="300.0" layoutY="266.0" />
       <Label layoutX="137.0" layoutY="83.0" text="Location Name" />

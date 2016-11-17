@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,8 +23,9 @@ public class AccountTracker implements Serializable {
      * Initializes the list to an existing one
      * @param accounts A List of registered users
      */
-    public void setList(List<User> accounts) {
-        this.accounts = accounts;
+    public void setList(Collection<User> accounts) {
+        this.accounts = new ArrayList<>();
+        this.accounts.addAll(accounts);
     }
 
     /**

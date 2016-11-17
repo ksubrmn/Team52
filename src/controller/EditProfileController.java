@@ -12,7 +12,13 @@ import model.User;
 public class EditProfileController {
 
     @FXML
-    TextField EmailBox, AddressBox, TitleBox;
+    private TextField EmailBox;
+
+    @FXML
+    private TextField AddressBox;
+
+    @FXML
+    private TextField TitleBox;
 
     private Main main;
     private User user;

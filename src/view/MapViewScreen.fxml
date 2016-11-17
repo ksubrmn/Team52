@@ -2,12 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
-
-
 <?import com.lynden.gmapsfx.GoogleMapView?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MapScreenController">
 
-      <GoogleMapView fx:id="mapView" layoutX="3.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" />
-      <Button onAction="#handleBackPressed" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.60"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MapScreenController">
+      <GoogleMapView fx:id="mapView" layoutX="3.0" layoutY="2.0"
+                     prefHeight="400.0" prefWidth="600.0" />
+      <Button onAction="#handleBackPressed" layoutX="14.0" layoutY="361.0"
+              mnemonicParsing="false" text="Back" />
 </AnchorPane>

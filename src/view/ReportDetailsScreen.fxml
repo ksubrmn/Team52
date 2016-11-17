@@ -6,7 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportDetailsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.101"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ReportDetailsController">
       <Label layoutX="199.0" layoutY="40.0" text="Source Report Details">
          <font>
             <Font size="23.0" />
@@ -14,19 +18,28 @@
       <Label layoutX="121.0" layoutY="143.0" text="Date:" />
       <Label layoutX="121.0" layoutY="188.0" text="Time:" />
       <Label layoutX="121.0" layoutY="229.0" text="Location:" />
-      <TextField fx:id="dateField" editable="false" layoutX="231.0" layoutY="139.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="timeField" editable="false" layoutX="233.0" layoutY="184.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="latField" editable="false" layoutX="262.0" layoutY="225.0" prefHeight="25.0" prefWidth="83.0" />
-      <Button layoutX="283.0" layoutY="341.0" mnemonicParsing="false" onAction="#HandleBackButtonPressed" text="Back" />
-      <TextField fx:id="waterTypeField" editable="false" layoutX="233.0" layoutY="263.0" prefHeight="25.0" prefWidth="263.0" />
-      <TextField fx:id="waterConditionField" editable="false" layoutX="233.0" layoutY="305.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="dateField" editable="false" layoutX="231.0"
+                 layoutY="139.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="timeField" editable="false" layoutX="233.0"
+                 layoutY="184.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="latField" editable="false" layoutX="262.0"
+                 layoutY="225.0" prefHeight="25.0" prefWidth="83.0" />
+      <Button layoutX="283.0" layoutY="341.0" mnemonicParsing="false"
+              onAction="#HandleBackButtonPressed" text="Back" />
+      <TextField fx:id="waterTypeField" editable="false" layoutX="233.0"
+                 layoutY="263.0" prefHeight="25.0" prefWidth="263.0" />
+      <TextField fx:id="waterConditionField" editable="false" layoutX="233.0"
+                 layoutY="305.0" prefHeight="25.0" prefWidth="263.0" />
       <Label layoutX="119.0" layoutY="268.0" text="Water Type:" />
       <Label layoutX="119.0" layoutY="310.0" text="Water Condition:" />
       <Label layoutX="120.0" layoutY="105.0" text="Report #:" />
       <Label layoutX="309.0" layoutY="105.0" text="Reporter:" />
-      <TextField fx:id="reportNumberField" editable="false" layoutX="232.0" layoutY="100.0" prefHeight="26.0" prefWidth="49.0" />
-      <TextField fx:id="reporterField" editable="false" layoutX="383.0" layoutY="100.0" prefHeight="26.0" prefWidth="113.0" />
+      <TextField fx:id="reportNumberField" editable="false" layoutX="232.0"
+                 layoutY="100.0" prefHeight="26.0" prefWidth="49.0" />
+      <TextField fx:id="reporterField" editable="false" layoutX="383.0"
+                 layoutY="100.0" prefHeight="26.0" prefWidth="113.0" />
       <Label layoutX="231.0" layoutY="229.0" text="Lat." />
       <Label layoutX="362.0" layoutY="229.0" text="Long." />
-      <TextField fx:id="longField" layoutX="405.0" layoutY="225.0" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="longField" layoutX="405.0" layoutY="225.0"
+                 prefHeight="25.0" prefWidth="90.0" />
 </AnchorPane>

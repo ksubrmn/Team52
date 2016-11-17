@@ -7,10 +7,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewHistoryGraphController">
-      <Label fx:id="GraphTitle" layoutX="231.0" layoutY="31.0" text="History Graph for [Location]:" />
-      <Button fx:id="DoneButton" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleDonePressed" text="Done" />
-      <LineChart fx:id="HistoryGraph" layoutX="84.0" layoutY="63.0" prefHeight="280.0" prefWidth="437.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.60"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ViewHistoryGraphController">
+      <Label fx:id="GraphTitle" layoutX="231.0" layoutY="31.0"
+             text="History Graph for [Location]:" />
+      <Button fx:id="DoneButton" layoutX="274.0" layoutY="354.0"
+              mnemonicParsing="false" onAction="#handleDonePressed"
+              text="Done" />
+      <LineChart fx:id="HistoryGraph" layoutX="84.0" layoutY="63.0"
+                 prefHeight="280.0" prefWidth="437.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

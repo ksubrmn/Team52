@@ -10,30 +10,68 @@ public class User implements Serializable {
 
     private final String username;
     private final String password;
-    private String email, address, title;
+    private String email;
+    private String address;
+    private String title;
     private final AccountType accountType;
 
 
-    /* **********************
-     * Getters and setters for properties
+    /**
+     * Returns the username
+     * @return the username
      */
     public String getUsername() { return username; }
     //public void setUsername(String name) { username = name; }
 
+    /**
+     * Returns the password
+     * @return the password
+     */
     public String getPassword() {return password; }
     //public void setPassword(String pass) { password = pass; }
 
+    /**
+     * Returns the account type
+     * @return the account type
+     */
     public AccountType getAccountType() { return accountType; }
     //public void setAccountType(AccountType accountType) {
     // this.accountType = accountType; }
 
+    /**
+     * returns the email
+     * @return the email
+     */
     public String getEmail() { return email; }
+
+    /**
+     * Sets the email
+     * @param email the email to set
+     */
     public void setEmail(String email) { this.email = email; }
 
+    /**
+     * Returns the address
+     * @return the address
+     */
     public String getAddress() { return address; }
+
+    /**
+     * Sets the address
+     * @param address the address to set
+     */
     public void setAddress(String address) { this.address = address; }
 
+    /**
+     * Returns the title
+     * @return the title
+     */
     public String getTitle() { return title; }
+
+    /**
+     * Sets the title
+     * @param title the title
+     */
     public void setTitle(String title) { this.title = title; }
 
     /**

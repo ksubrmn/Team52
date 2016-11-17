@@ -47,8 +47,9 @@ public class ApplicationController {
      * Handles submit purity report action
      */
     public void HandleSubmitPurityReportButton() {
-        if ((main.getUser().getAccountType() == AccountType.Worker) ||
-                (main.getUser().getAccountType() == AccountType.Manager)){
+        AccountType accountType = main.getUser().getAccountType();
+        if ((accountType == AccountType.Worker) ||
+                (accountType == AccountType.Manager)){
             main.showSubmitPurityReportScreen();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -102,7 +102,7 @@ public class SubmitPurityReportController {
                 try
                 {
                     final FileOutputStream fo
-                            = new FileOutputStream("purityreports.out");
+                            = new FileOutputStream("purityReports.out");
                     final ObjectOutput oos = new ObjectOutputStream(fo);
                     oos.writeObject(main.getWaterReportTracker()
                             .getPurityReports());

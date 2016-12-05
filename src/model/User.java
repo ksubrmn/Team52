@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private final String username;
-    private final String password;
+    private String password;
     private String email;
     private String address;
     private String title;
@@ -107,5 +107,7 @@ public class User implements Serializable {
         title = "[Not Set]";
     }
 
-
+    public void changePassword(String password) {
+        this.password = password;
+    }
 }

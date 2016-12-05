@@ -83,4 +83,14 @@ public class AccountTracker implements Serializable {
         }
         return null;
     }
+
+    public boolean changePassword(String username, String password) {
+        for (User user: accounts) {
+            if (user.getUsername().equals(username)) {
+                user.changePassword(password);
+                return true;
+            }
+        }
+        return false;
+    }
 }

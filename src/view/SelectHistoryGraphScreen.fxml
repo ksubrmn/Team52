@@ -5,30 +5,27 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.60"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.SelectHistoryGraphController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectHistoryGraphController">
+   <ImageView fitHeight="400.0" fitWidth="600.0">
+      <image>
+         <Image url="@../media/bg.png" />
+      </image>
+   </ImageView>
       <TextField fx:id="LocationBox" layoutX="275.0" layoutY="87.0" />
       <Label layoutX="198.0" layoutY="91.0" text="Location:" />
       <Label layoutX="231.0" layoutY="31.0" text="Enter desired location:" />
-      <Button layoutX="206.0" layoutY="294.0" mnemonicParsing="false"
-              onAction="#handleSubmitPressed" text="Get Graph" />
-      <Button fx:id="CancelButton" layoutX="325.0" layoutY="294.0"
-              mnemonicParsing="false" onAction="#handleCancelPressed"
-              text="Cancel" />
-      <RadioButton fx:id="virusButton" layoutX="198.0" layoutY="149.0"
-                   mnemonicParsing="false" selected="true" text="Virus">
+      <Button layoutX="206.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleSubmitPressed" text="Get Graph" />
+      <Button fx:id="CancelButton" layoutX="325.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleCancelPressed" text="Cancel" />
+      <RadioButton fx:id="virusButton" layoutX="198.0" layoutY="149.0" mnemonicParsing="false" selected="true" text="Virus">
          <toggleGroup>
             <ToggleGroup fx:id="radioButtons" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="contaminantButton" layoutX="316.0" layoutY="149.0"
-                   mnemonicParsing="false" text="Contaminant"
-                   toggleGroup="$radioButtons" />
+      <RadioButton fx:id="contaminantButton" layoutX="316.0" layoutY="149.0" mnemonicParsing="false" text="Contaminant" toggleGroup="$radioButtons" />
       <TextField fx:id="YearBox" layoutX="275.0" layoutY="200.0" />
       <Label layoutX="209.0" layoutY="204.0" text="Year:" />
 </AnchorPane>

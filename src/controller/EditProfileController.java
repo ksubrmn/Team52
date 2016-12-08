@@ -6,6 +6,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.User;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
 /**
  * Handles the Screen that allows uses to edit their profile
  */
@@ -43,6 +46,18 @@ public class EditProfileController {
             alert.setHeaderText("Update Account Information");
             alert.setContentText("Account information successfully updated");
             alert.showAndWait();
+            try
+            {
+                final FileOutputStream fo = new FileOutputStream("users.out");
+                final ObjectOutputStream oos = new ObjectOutputStream(fo);
+                oos.writeObject(main.getAccountTracker().getAccounts());
+                oos.flush();
+                oos.close();
+
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
             main.showApplicationScreen();
         }
     }

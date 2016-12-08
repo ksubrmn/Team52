@@ -23,6 +23,9 @@ public class LoginScreenController {
     private Button cancelButton;
 
     @FXML
+    private Button sendEmail;
+
+    @FXML
     private TextField usernameTextField;
 
     @FXML
@@ -45,6 +48,25 @@ public class LoginScreenController {
             alert.setTitle("Error");
             alert.setHeaderText("Failed Login Attempt");
             alert.setContentText("Username or password was incorrect");
+            alert.showAndWait();
+        }
+    }
+
+    public void emailButtonPressed() {
+        if (main.getAccountTracker().getUser(usernameTextField.getText()) != null) {
+            EmailController sendm = new EmailController("Your password is: " + main.getAccountTracker().getUser(usernameTextField.getText()).getPassword(),main.getAccountTracker().getUser(usernameTextField.getText()).getEmail() );
+            sendm.send();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Info");
+            alert.setHeaderText("Password");
+            alert.setContentText("Password emailed");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+
+            alert.setTitle("Error");
+            alert.setHeaderText("Enter valid username");
+            alert.setContentText("Username incorrect");
             alert.showAndWait();
         }
     }

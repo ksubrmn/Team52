@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginScreenController">
    <ImageView fitHeight="400.0" fitWidth="600.0">
       <image>
          <Image url="@../media/bg.png" />
@@ -74,6 +74,8 @@
                 <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel" />
               </buttons>
             </ButtonBar>
+         <Button fx:id="sendEmail" mnemonicParsing="false" onAction="#emailButtonPressed" prefHeight="26.0" text="?" />
         </buttons>
       </ButtonBar>
+   <Button mnemonicParsing="false" text="Button" />
 </AnchorPane>

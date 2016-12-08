@@ -15,6 +15,7 @@ import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import com.lynden.gmapsfx.javascript.object.Marker;
 import com.lynden.gmapsfx.javascript.object.MarkerOptions;
 
+
 import fxapp.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,8 +72,8 @@ public class MapScreenController implements Initializable,
                     report.getLongitude());
             markerOptions.position(loc)
                     .visible(Boolean.TRUE)
-                    .title("Report: " + report.getReportNumber())
-                    .icon("../media/paleblue_MarkerS");
+                    .title("Report: " + report.getReportNumber());
+
             Marker marker = new Marker(markerOptions);
             map.addUIEventHandler(marker,
                     UIEventType.click,
@@ -85,7 +86,7 @@ public class MapScreenController implements Initializable,
                     });
             map.addMarker(marker);
         }
-        for (WaterPurityReport report: main.getWaterReportTracker()
+        /*for (WaterPurityReport report: main.getWaterReportTracker()
                 .getPurityReports()) {
             MarkerOptions markerOptions = new MarkerOptions();
             LatLong loc = new LatLong(report.getLatitude(),
@@ -105,7 +106,7 @@ public class MapScreenController implements Initializable,
                         window.open(map, marker);
                     });
             map.addMarker(marker);
-        }
+        }*/
     }
 
     @Override

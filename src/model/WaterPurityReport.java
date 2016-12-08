@@ -186,4 +186,11 @@ public class WaterPurityReport implements Serializable{
     public String getLocation() {
         return location;
     }
+
+    public String getDescription() {
+        return "<h2>Report " + reportNumber + "</h2><br>Location: " + latitude
+                + ", " + longitude
+                + "<br>Condition: " + waterCondition + "<br>Created by "
+                + reporterName + " on " + date;
+    }
 }
